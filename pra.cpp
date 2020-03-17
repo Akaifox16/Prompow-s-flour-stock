@@ -2,6 +2,7 @@
 #include<fstream>
 #include<vector>
 #include<string>
+#include<iomanip>
 using namespace std;
 
 struct bread{
@@ -28,12 +29,19 @@ int main(){
         list.push_back(tmp);
     }
 
-    for(int i = 0 ; i < list.size() ; i++)
-        cout << list[i].name << ":\n"
-             << "stock = "<< list[i].stock
-             << "\ncost = " << list[i].cost
-             << "\nday = " << list[i].day
-             << "\nsold = " << list[i].sold << "\n\n";
+    for(int i = 0 ; i < list.size() ; i++){
+        int num;
+        cout << list[i].name << setw(10) << "sold?" << ":  ";
+        cin >> num;
+        list[i].sold=num;
+       // cout << list[i].sold;
+
+    }
+       
+            // << "stock = "<< list[i].stock
+            // << "\ncost = " << list[i].cost
+            // << "\nday = " << list[i].day
+            // << "\nsold = " << list[i].sold << "\n\n";
 
 
              
