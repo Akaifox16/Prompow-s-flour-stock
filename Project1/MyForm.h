@@ -9,6 +9,8 @@ namespace Project1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Reflection;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Summary for MyForm
@@ -47,16 +49,17 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^ button2;
 
 
-	private: System::Windows::Forms::Panel^ panel1;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button3;
 
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+
+
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::ListBox^ listBox1;
 
 
 
@@ -95,14 +98,10 @@ namespace Project1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->flowLayoutPanel1->SuspendLayout();
 			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// flowLayoutPanel1
@@ -136,7 +135,7 @@ namespace Project1 {
 			this->label1->ForeColor = System::Drawing::Color::Black;
 			this->label1->Location = System::Drawing::Point(33, 64);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(115, 21);
+			this->label1->Size = System::Drawing::Size(140, 26);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Management";
 			// 
@@ -148,7 +147,7 @@ namespace Project1 {
 			this->label2->ForeColor = System::Drawing::Color::Black;
 			this->label2->Location = System::Drawing::Point(9, 6);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(70, 45);
+			this->label2->Size = System::Drawing::Size(87, 56);
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"SM";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -169,6 +168,7 @@ namespace Project1 {
 			this->button2->Text = L"Dashboard";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// button1
 			// 
@@ -203,42 +203,6 @@ namespace Project1 {
 			this->button3->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button3->UseVisualStyleBackColor = true;
 			// 
-			// panel1
-			// 
-			this->panel1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panel1->Location = System::Drawing::Point(166, 278);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(713, 178);
-			this->panel1->TabIndex = 5;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(196, 33);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(89, 21);
-			this->label4->TabIndex = 7;
-			this->label4->Text = L"Total sales";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(439, 129);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(56, 16);
-			this->label3->TabIndex = 6;
-			this->label3->Text = L"label3";
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Location = System::Drawing::Point(200, 67);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(649, 166);
-			this->pictureBox1->TabIndex = 8;
-			this->pictureBox1->TabStop = false;
-			// 
 			// button5
 			// 
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -254,17 +218,23 @@ namespace Project1 {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 20;
+			this->listBox1->Location = System::Drawing::Point(222, 20);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(569, 364);
+			this->listBox1->TabIndex = 10;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
 			this->ClientSize = System::Drawing::Size(879, 456);
+			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button5);
-			this->Controls->Add(this->pictureBox1);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->flowLayoutPanel1);
 			this->Font = (gcnew System::Drawing::Font(L"SimSun", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -278,9 +248,7 @@ namespace Project1 {
 			this->flowLayoutPanel1->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -304,6 +272,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	c->ShowDialog();
 }
 private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ filename = "today_baked.txt"; // the name of text file
+	String^ path = Assembly::GetExecutingAssembly()->Location;
+	path = Path::Combine(Path::GetDirectoryName(path), filename);
+	array<String^>^ text = File::ReadAllLines(path);
+	listBox1->DataSource = text;
 }
 };
 }
