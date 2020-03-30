@@ -123,11 +123,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bread.cpp" />
     <ClCompile Include="chart.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bread.h" />
     <ClInclude Include="chart.h">
       <FileType>CppForm</FileType>
     </ClInclude>

@@ -1,5 +1,7 @@
 #pragma once
 #include "chart.h"
+#include "bread.h"
+
 
 namespace Project1 {
 
@@ -60,6 +62,7 @@ namespace Project1 {
 
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::ListBox^ listBox1;
+
 
 
 
@@ -202,6 +205,7 @@ namespace Project1 {
 			this->button3->Text = L"Calculator";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// button5
 			// 
@@ -222,10 +226,11 @@ namespace Project1 {
 			// 
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 20;
-			this->listBox1->Location = System::Drawing::Point(222, 20);
+			this->listBox1->Location = System::Drawing::Point(220, 48);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(569, 364);
+			this->listBox1->Size = System::Drawing::Size(625, 384);
 			this->listBox1->TabIndex = 10;
+			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
 			// 
 			// MyForm
 			// 
@@ -279,6 +284,23 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	path = Path::Combine(Path::GetDirectoryName(path), filename);
 	array<String^>^ text = File::ReadAllLines(path);
 	listBox1->DataSource = text;
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	std::ifstream file("today_baked.txt");
+	std::string textline;
+	std::vector<bread> list;
+	char name[50];
+	while (std::getline(file , textline)) {
+		bread tmp;
+		tmp.day = 0;
+		tmp.sold = 0;
+		sscanf(textline.c_str(), "%[^:]: %d %f %d", name, &tmp.stock, &tmp.cost, &tmp.day);
+		tmp.name = name;
+		list.push_back(tmp);
+	}
+
+}
+private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
