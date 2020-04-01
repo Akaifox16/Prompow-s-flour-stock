@@ -1,6 +1,7 @@
 #pragma once
 #include "chart.h"
 #include "bread.h"
+#include "Summary.h"
 
 
 namespace Project1 {
@@ -299,6 +300,9 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	file.close();
 
+	Summary^ c = gcnew Summary();
+	c->ShowDialog();
+
 
 	for (int i = 0; i < listed.size(); i++) {
 		listed.at(i).day += 1;
@@ -310,9 +314,8 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		oss << listed.at(i).name << " " << listed.at(i).stock << " " << listed.at(i).cost << " " << listed.at(i).sold << " " << listed.at(i).day;
 		textline = oss.str();
 		out << textline << '\n';
-		std::cout << textline << '\n';
 	}
-
+	out.close();
 }
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }

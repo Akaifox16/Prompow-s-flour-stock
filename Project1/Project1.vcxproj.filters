@@ -27,6 +27,9 @@
     <ClCompile Include="bread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Summary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Summary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
