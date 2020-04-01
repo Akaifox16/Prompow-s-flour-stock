@@ -286,13 +286,14 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	listBox1->DataSource = text;
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	std::ifstream file("today_baked.txt");
+	std::ifstream file("file.txt");
 	std::string textline;
 	std::vector<bread> listed;
 	char name[50];
 	while (std::getline(file, textline)) {
 		bread tmp;
-		sscanf(textline.c_str(), "%[^:]: %d %d %d %d ", name, &tmp.stock, &tmp.cost, &tmp.sold, &tmp.day);
+		std::istringstream iss(textline);
+		iss >> name >> tmp.stock >> tmp.cost >> tmp.sold >> tmp.day;
 		tmp.name = name;
 		listed.push_back(tmp);
 	}
@@ -303,13 +304,13 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		listed.at(i).day += 1;
 	}
 
-	std::ofstream out("today_baked.txt");
+	std::ofstream out("file.txt");
 	for (int i = 0; i < listed.size(); i++) {
-		std::string price = std::to_string(listed.at(i).cost);
-		textline = listed.at(i).name;
-		textline = textline + ": " + std::to_string(listed.at(i).stock) + " " + std::to_string(listed.at(i).cost) + " " + std::to_string(listed.at(i).sold) + " " + std::to_string(listed.at(i).day);
-
+		std::ostringstream oss;
+		oss << listed.at(i).name << " " << listed.at(i).stock << " " << listed.at(i).cost << " " << listed.at(i).sold << " " << listed.at(i).day;
+		textline = oss.str();
 		out << textline << '\n';
+		std::cout << textline << '\n';
 	}
 
 }
