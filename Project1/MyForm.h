@@ -202,7 +202,7 @@ namespace Project1 {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(163, 101);
 			this->button3->TabIndex = 9;
-			this->button3->Text = L"Calculator";
+			this->button3->Text = L"Summary";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
@@ -288,15 +288,28 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	std::ifstream file("today_baked.txt");
 	std::string textline;
-	std::vector<bread> list;
+	std::vector<bread> listed;
 	char name[50];
-	while (std::getline(file , textline)) {
+	while (std::getline(file, textline)) {
 		bread tmp;
-		tmp.day = 0;
-		tmp.sold = 0;
-		sscanf(textline.c_str(), "%[^:]: %d %f %d", name, &tmp.stock, &tmp.cost, &tmp.day);
+		sscanf(textline.c_str(), "%[^:]: %d %d %d %d ", name, &tmp.stock, &tmp.cost, &tmp.sold, &tmp.day);
 		tmp.name = name;
-		list.push_back(tmp);
+		listed.push_back(tmp);
+	}
+	file.close();
+
+
+	for (int i = 0; i < listed.size(); i++) {
+		listed.at(i).day += 1;
+	}
+
+	std::ofstream out("today_baked.txt");
+	for (int i = 0; i < listed.size(); i++) {
+		std::string price = std::to_string(listed.at(i).cost);
+		textline = listed.at(i).name;
+		textline = textline + ": " + std::to_string(listed.at(i).stock) + " " + std::to_string(listed.at(i).cost) + " " + std::to_string(listed.at(i).sold) + " " + std::to_string(listed.at(i).day);
+
+		out << textline << '\n';
 	}
 
 }
