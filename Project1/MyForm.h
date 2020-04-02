@@ -105,7 +105,7 @@ namespace Project1 {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->Sort = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
+			//this->button6 = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->flowLayoutPanel1->SuspendLayout();
 			this->panel2->SuspendLayout();
@@ -248,10 +248,10 @@ namespace Project1 {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(0, 0);
+			/*this->button6->Location = System::Drawing::Point(0, 0);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(75, 23);
-			this->button6->TabIndex = 0;
+			this->button6->TabIndex = 0;*/
 			// 
 			// listBox1
 			// 
