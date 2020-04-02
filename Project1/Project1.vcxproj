@@ -127,6 +127,7 @@
     <ClCompile Include="chart.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="Summary.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bread.h" />
@@ -136,6 +137,9 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Summary.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="chart.resx">
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Summary.resx">
+      <DependentUpon>Summary.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
