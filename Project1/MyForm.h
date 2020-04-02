@@ -60,21 +60,9 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^ button6;
 
 
-
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::ListBox^ listBox1;
 	private: System::Windows::Forms::Button^ Sort;
-
-
-
-
-
-
-
-
-
-
-
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -106,7 +94,6 @@ namespace Project1 {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->Sort = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
-			//this->button6 = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->flowLayoutPanel1->SuspendLayout();
 			this->panel2->SuspendLayout();
@@ -247,18 +234,11 @@ namespace Project1 {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
-			// button6
-			// 
-			/*this->button6->Location = System::Drawing::Point(0, 0);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(75, 23);
-			this->button6->TabIndex = 0;*/
-			// 
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 20;
-			this->listBox1->Location = System::Drawing::Point(194, 25);
+			this->listBox1->Location = System::Drawing::Point(211, 40);
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(838, 444);
 			this->listBox1->TabIndex = 10;
@@ -351,7 +331,6 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-
 }
 };
 }

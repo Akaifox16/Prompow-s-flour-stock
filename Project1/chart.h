@@ -112,7 +112,7 @@ namespace Project1 {
 			this->label2->Size = System::Drawing::Size(67, 23);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Name";
-			this->label2->Click += gcnew System::EventHandler(this, &chart::label2_Click);
+			//this->label2->Click += gcnew System::EventHandler(this, &chart::label2_Click);
 			// 
 			// textBox1
 			// 
@@ -224,18 +224,18 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 	// String^ sold to string soldfos to int soldint
 	std::ofstream file("today_baked.txt");
-	char cStr[50] = { 0 };
-	String^ clrString = sold;
+	cStr[50] = { 0 };
+	clrString = sold;
 	if (clrString->Length < sizeof(cStr))
 		sprintf(cStr, "%s", clrString);
 	std::string soldofs = cStr;
 	int soldint = std::stoi(soldofs);
 
 
-	std::ifstream file("today_baked.txt");
+	std::ifstream in("today_baked.txt");
 	std::string textline;
 	std::vector<bread> listed;
-	while (std::getline(file, textline)) {
+	while (std::getline(in, textline)) {
 		bread tmp;
 		std::istringstream iss(textline);
 		iss >> tmp.name >> tmp.stock >> tmp.cost >> tmp.sold >> tmp.day;
@@ -246,7 +246,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	for (int j = 0; j < listed.size(); j++) {
 		if (nameofs == listed[j].name) {
 			listed[j].sold = soldint;
-			listed[j].amount -= soldint;
+			listed[j].stock -=   soldint;
 		}
 	}
 	for (int i = 0; i < listed.size(); i++) {
