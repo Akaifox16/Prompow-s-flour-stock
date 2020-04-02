@@ -57,12 +57,14 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button3;
-
+	private: System::Windows::Forms::Button^ button6;
 
 
 
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::ListBox^ listBox1;
+	private: System::Windows::Forms::Button^ Sort;
+
 
 
 
@@ -102,7 +104,9 @@ namespace Project1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->Sort = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			//this->button6 = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->flowLayoutPanel1->SuspendLayout();
 			this->panel2->SuspendLayout();
@@ -114,10 +118,11 @@ namespace Project1 {
 			this->flowLayoutPanel1->Controls->Add(this->button2);
 			this->flowLayoutPanel1->Controls->Add(this->button1);
 			this->flowLayoutPanel1->Controls->Add(this->button3);
+			this->flowLayoutPanel1->Controls->Add(this->Sort);
 			this->flowLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(0, 0);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(166, 456);
+			this->flowLayoutPanel1->Size = System::Drawing::Size(166, 555);
 			this->flowLayoutPanel1->TabIndex = 4;
 			// 
 			// panel2
@@ -137,7 +142,7 @@ namespace Project1 {
 			this->label1->Font = (gcnew System::Drawing::Font(L"MV Boli", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(33, 64);
+			this->label1->Location = System::Drawing::Point(20, 65);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(140, 26);
 			this->label1->TabIndex = 6;
@@ -149,7 +154,7 @@ namespace Project1 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Monotype Corsiva", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::Black;
-			this->label2->Location = System::Drawing::Point(9, 6);
+			this->label2->Location = System::Drawing::Point(15, 9);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(87, 56);
 			this->label2->TabIndex = 7;
@@ -167,7 +172,7 @@ namespace Project1 {
 			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
 			this->button2->Location = System::Drawing::Point(3, 110);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(163, 93);
+			this->button2->Size = System::Drawing::Size(160, 95);
 			this->button2->TabIndex = 7;
 			this->button2->Text = L"Dashboard";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -182,9 +187,9 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::White;
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
-			this->button1->Location = System::Drawing::Point(3, 209);
+			this->button1->Location = System::Drawing::Point(3, 211);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(163, 96);
+			this->button1->Size = System::Drawing::Size(160, 70);
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"Add chart";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -199,14 +204,33 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::White;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
-			this->button3->Location = System::Drawing::Point(3, 311);
+			this->button3->Location = System::Drawing::Point(3, 287);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(163, 101);
+			this->button3->Size = System::Drawing::Size(160, 88);
 			this->button3->TabIndex = 9;
 			this->button3->Text = L"Summary";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			// 
+			// Sort
+			// 
+			this->Sort->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)));
+			this->Sort->FlatAppearance->BorderSize = 0;
+			this->Sort->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Sort->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Sort->ForeColor = System::Drawing::Color::White;
+			this->Sort->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Sort.Image")));
+			this->Sort->Location = System::Drawing::Point(3, 381);
+			this->Sort->Name = L"Sort";
+			this->Sort->Size = System::Drawing::Size(160, 103);
+			this->Sort->TabIndex = 10;
+			this->Sort->Text = L"Sort";
+			this->Sort->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			this->Sort->UseVisualStyleBackColor = false;
+			this->Sort->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// button5
 			// 
@@ -214,7 +238,7 @@ namespace Project1 {
 			this->button5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::Color::Red;
-			this->button5->Location = System::Drawing::Point(813, -15);
+			this->button5->Location = System::Drawing::Point(1072, 3);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(54, 45);
 			this->button5->TabIndex = 9;
@@ -223,13 +247,20 @@ namespace Project1 {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
+			// button6
+			// 
+			/*this->button6->Location = System::Drawing::Point(0, 0);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(75, 23);
+			this->button6->TabIndex = 0;*/
+			// 
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 20;
-			this->listBox1->Location = System::Drawing::Point(220, 48);
+			this->listBox1->Location = System::Drawing::Point(194, 25);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(625, 384);
+			this->listBox1->Size = System::Drawing::Size(838, 444);
 			this->listBox1->TabIndex = 10;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
 			// 
@@ -238,7 +269,7 @@ namespace Project1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
-			this->ClientSize = System::Drawing::Size(879, 456);
+			this->ClientSize = System::Drawing::Size(1116, 555);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->flowLayoutPanel1);
@@ -318,6 +349,9 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	out.close();
 }
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }
