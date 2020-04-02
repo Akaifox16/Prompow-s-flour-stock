@@ -287,7 +287,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	listBox1->DataSource = text;
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	std::ifstream file("file.txt");
+	std::ifstream file("today_baked.txt");
 	std::string textline;
 	std::vector<bread> listed;
 	char name[50];
@@ -308,7 +308,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		listed.at(i).day += 1;
 	}
 
-	std::ofstream out("file.txt");
+	std::ofstream out("today_baked.txt");
 	for (int i = 0; i < listed.size(); i++) {
 		std::ostringstream oss;
 		oss << listed.at(i).name << " " << listed.at(i).stock << " " << listed.at(i).cost << " " << listed.at(i).sold << " " << listed.at(i).day;
