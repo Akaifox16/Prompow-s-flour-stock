@@ -210,7 +210,7 @@ namespace Project1 {
 			this->button3->Text = L"Summary";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// Sort
 			// 
