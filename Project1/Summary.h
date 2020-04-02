@@ -34,6 +34,8 @@ namespace Project1 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Label^ label1;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,13 +50,28 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 72, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->label1->Location = System::Drawing::Point(12, 9);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(358, 135);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Menu";
+			this->label1->Click += gcnew System::EventHandler(this, &Summary::label1_Click);
 			// 
 			// Summary
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(592, 410);
+			this->ClientSize = System::Drawing::Size(1311, 566);
+			this->Controls->Add(this->label1);
 			this->Name = L"Summary";
 			this->Text = L"Summary";
 			this->ResumeLayout(false);
@@ -62,5 +79,7 @@ namespace Project1 {
 
 		}
 #pragma endregion
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }
