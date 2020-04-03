@@ -226,7 +226,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	StreamWriter^ sw = gcnew StreamWriter("today_baked.txt");
 	for (int j = 0; j < listed.size(); j++) {
 		if (nameofs == listed[j].name) {
-			listed[j].sold = soldint;
+			listed[j].sold += soldint;
 			listed[j].stock -=   soldint;
 		}
 	}
