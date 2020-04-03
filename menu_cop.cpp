@@ -10,7 +10,7 @@ struct bread{
     string name;// name = ชื่อหนมปัง    
     int  stock , cost , day ,sold ; /*
         stock = จน ที่ผลิต
-        cost = ราคา่
+        cost = ราคา
         day = ผลิตมาแล้วกี่วัน
         sold = ขายไปแล้วเท่าไหร่
     */
@@ -49,7 +49,7 @@ total += calamount(listgoods[i].sold,listgoods[i].cost);
 }
 
 cout  << endl <<"TOTAL: "<< setw(73) << total;
-// version คอปเตอร์คนขยันz
+// version คอปเตอร์คนขยันz แต่คงไม่ได้ใช้มั้งนะ
 // [
 // listgoods[0].name = creame brulee;
 // listgoods[1].name = wholewheat bread;
