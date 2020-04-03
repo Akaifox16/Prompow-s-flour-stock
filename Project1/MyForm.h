@@ -131,7 +131,7 @@ namespace Project1 {
 			this->label1->ForeColor = System::Drawing::Color::Black;
 			this->label1->Location = System::Drawing::Point(20, 65);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(115, 21);
+			this->label1->Size = System::Drawing::Size(140, 26);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Management";
 			// 
@@ -143,7 +143,7 @@ namespace Project1 {
 			this->label2->ForeColor = System::Drawing::Color::Black;
 			this->label2->Location = System::Drawing::Point(15, 9);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(70, 45);
+			this->label2->Size = System::Drawing::Size(87, 56);
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"SM";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -225,9 +225,9 @@ namespace Project1 {
 			this->button5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::Color::Red;
-			this->button5->Location = System::Drawing::Point(1050, -13);
+			this->button5->Location = System::Drawing::Point(1058, 0);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(54, 45);
+			this->button5->Size = System::Drawing::Size(58, 45);
 			this->button5->TabIndex = 9;
 			this->button5->Text = L"X";
 			this->button5->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -236,11 +236,15 @@ namespace Project1 {
 			// 
 			// listBox1
 			// 
+			this->listBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)));
+			this->listBox1->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->listBox1->ForeColor = System::Drawing::Color::White;
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(211, 40);
+			this->listBox1->ItemHeight = 20;
+			this->listBox1->Location = System::Drawing::Point(166, 51);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(838, 436);
+			this->listBox1->Size = System::Drawing::Size(950, 504);
 			this->listBox1->TabIndex = 10;
 			this->listBox1->Visible = false;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
@@ -293,11 +297,14 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ filename = "today_baked.txt"; // the name of text file
-	String^ path = Assembly::GetExecutingAssembly()->Location;
-	path = Path::Combine(Path::GetDirectoryName(path), filename);
-	array<String^>^ text = File::ReadAllLines(path);
-	listBox1->DataSource = text;
+	listBox1->Items->Clear();
+	std::ifstream in("today_baked.txt");
+	std::string textline;
+	std::vector<bread> listed;
+	while (std::getline(in, textline)) {
+		String^ clrString = marshal_as<System::String^>(textline);
+		this->listBox1->Items->Add(clrString + "\n");
+	}
 	listBox1->Visible = true;
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
