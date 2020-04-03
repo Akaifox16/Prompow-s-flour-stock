@@ -194,7 +194,7 @@ namespace Project1 {
 	private: System::Void monthCalendar1_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
+	this->Close();
 	
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
