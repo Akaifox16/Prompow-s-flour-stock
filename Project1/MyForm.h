@@ -53,8 +53,8 @@ namespace Project1 {
 
 
 
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
+
+
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button6;
@@ -63,6 +63,8 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::ListBox^ listBox1;
 	private: System::Windows::Forms::Button^ Sort;
+
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -87,8 +89,6 @@ namespace Project1 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -96,7 +96,6 @@ namespace Project1 {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->flowLayoutPanel1->SuspendLayout();
-			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// flowLayoutPanel1
@@ -115,39 +114,14 @@ namespace Project1 {
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Gold;
-			this->panel2->Controls->Add(this->label1);
-			this->panel2->Controls->Add(this->label2);
+			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->panel2->ForeColor = System::Drawing::Color::Transparent;
 			this->panel2->Location = System::Drawing::Point(3, 3);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(163, 101);
 			this->panel2->TabIndex = 0;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"MV Boli", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(20, 65);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(115, 21);
-			this->label1->TabIndex = 6;
-			this->label1->Text = L"Management";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Monotype Corsiva", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::Black;
-			this->label2->Location = System::Drawing::Point(15, 9);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(70, 45);
-			this->label2->TabIndex = 7;
-			this->label2->Text = L"SM";
-			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
+			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::panel2_Paint);
 			// 
 			// button2
 			// 
@@ -237,10 +211,10 @@ namespace Project1 {
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
+			this->listBox1->ItemHeight = 20;
 			this->listBox1->Location = System::Drawing::Point(211, 40);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(838, 436);
+			this->listBox1->Size = System::Drawing::Size(838, 424);
 			this->listBox1->TabIndex = 10;
 			this->listBox1->Visible = false;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
@@ -265,8 +239,6 @@ namespace Project1 {
 			this->Text = L"Sales management";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->flowLayoutPanel1->ResumeLayout(false);
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -334,6 +306,8 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }
