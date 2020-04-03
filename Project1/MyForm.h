@@ -242,6 +242,7 @@ namespace Project1 {
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(838, 444);
 			this->listBox1->TabIndex = 10;
+			this->listBox1->Visible = false;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
 			// 
 			// MyForm
@@ -249,6 +250,7 @@ namespace Project1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1116, 555);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button5);
@@ -296,6 +298,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	path = Path::Combine(Path::GetDirectoryName(path), filename);
 	array<String^>^ text = File::ReadAllLines(path);
 	listBox1->DataSource = text;
+	listBox1->Visible = true;
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	std::ifstream file("today_baked.txt");
