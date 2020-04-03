@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 namespace Project1 {
 
@@ -116,7 +116,7 @@ namespace Project1 {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Algerian", 22.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::SystemColors::Highlight;
-			this->label4->Location = System::Drawing::Point(1007, 33);
+			this->label4->Location = System::Drawing::Point(1019, 30);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(187, 42);
 			this->label4->TabIndex = 3;
@@ -160,11 +160,11 @@ namespace Project1 {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(1095, 499);
+			this->label5->Location = System::Drawing::Point(1054, 499);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(110, 25);
+			this->label5->Size = System::Drawing::Size(122, 25);
 			this->label5->TabIndex = 8;
-			this->label5->Text = L"Total(Bath)";
+			this->label5->Text = L"Total(Bath฿)";
 			// 
 			// listBox3
 			// 
