@@ -50,6 +50,8 @@ namespace Project1 {
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Button^ button2;
+	private: bool dragging;
+	private: Point offset;
 
 
 
@@ -63,6 +65,8 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::ListBox^ listBox1;
 	private: System::Windows::Forms::Button^ Sort;
+
+
 
 
 
@@ -195,30 +199,30 @@ namespace Project1 {
 			// 
 			// button5
 			// 
+			this->button5->BackColor = System::Drawing::Color::Transparent;
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::Color::Red;
-			this->button5->Location = System::Drawing::Point(1062, 3);
+			this->button5->Location = System::Drawing::Point(1050, -11);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(54, 45);
 			this->button5->TabIndex = 9;
 			this->button5->Text = L"X";
 			this->button5->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->button5->UseVisualStyleBackColor = true;
+			this->button5->UseVisualStyleBackColor = false;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
 			// listBox1
 			// 
 			this->listBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
-			this->listBox1->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->listBox1->ForeColor = System::Drawing::Color::White;
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 20;
-			this->listBox1->Location = System::Drawing::Point(166, 51);
+			this->listBox1->ItemHeight = 16;
+			this->listBox1->Location = System::Drawing::Point(210, 86);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(950, 504);
+			this->listBox1->Size = System::Drawing::Size(882, 452);
 			this->listBox1->TabIndex = 10;
 			this->listBox1->Visible = false;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
@@ -242,6 +246,10 @@ namespace Project1 {
 			this->Name = L"MyForm";
 			this->Text = L"Sales management";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->DragDrop += gcnew System::Windows::Forms::DragEventHandler(this, &MyForm::MyForm_DragDrop);
+			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseDown);
+			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseMove);
+			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseUp);
 			this->flowLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -252,6 +260,7 @@ namespace Project1 {
 	private: System::Void progressBar1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->dragging = false;
 	}
 	private: System::Void price_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -314,7 +323,18 @@ private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, Syst
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+private: System::Void MyForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if (this->dragging) {
+		Point currentScreenPos = PointToScreen(e->Location);
+		Location = Point(currentScreenPos.X - this->offset.X, currentScreenPos.Y - this->offset.Y);
+	}
+}
+private: System::Void MyForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	this->dragging = false;
+}
+private: System::Void MyForm_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	this->dragging = true;
+	this->offset = Point(e->X, e->Y);
 }
 };
 }

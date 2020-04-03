@@ -45,6 +45,7 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::ListBox^ listBox3;
 	private: System::Windows::Forms::ListBox^ listBox4;
+	private: System::Windows::Forms::Button^ button5;
 	protected:
 
 	private:
@@ -70,6 +71,7 @@ namespace Project1 {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->listBox3 = (gcnew System::Windows::Forms::ListBox());
 			this->listBox4 = (gcnew System::Windows::Forms::ListBox());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -131,7 +133,7 @@ namespace Project1 {
 			this->listBox1->ForeColor = System::Drawing::SystemColors::ActiveCaption;
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->Location = System::Drawing::Point(24, 63);
-			this->listBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->listBox1->Margin = System::Windows::Forms::Padding(2);
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(333, 329);
 			this->listBox1->TabIndex = 4;
@@ -156,7 +158,7 @@ namespace Project1 {
 			this->listBox2->ForeColor = System::Drawing::SystemColors::ActiveCaption;
 			this->listBox2->FormattingEnabled = true;
 			this->listBox2->Location = System::Drawing::Point(380, 61);
-			this->listBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->listBox2->Margin = System::Windows::Forms::Padding(2);
 			this->listBox2->Name = L"listBox2";
 			this->listBox2->Size = System::Drawing::Size(141, 329);
 			this->listBox2->TabIndex = 7;
@@ -179,7 +181,7 @@ namespace Project1 {
 			this->listBox3->ForeColor = System::Drawing::SystemColors::ActiveCaption;
 			this->listBox3->FormattingEnabled = true;
 			this->listBox3->Location = System::Drawing::Point(554, 63);
-			this->listBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->listBox3->Margin = System::Windows::Forms::Padding(2);
 			this->listBox3->Name = L"listBox3";
 			this->listBox3->Size = System::Drawing::Size(151, 329);
 			this->listBox3->TabIndex = 9;
@@ -190,10 +192,26 @@ namespace Project1 {
 			this->listBox4->ForeColor = System::Drawing::SystemColors::ActiveCaption;
 			this->listBox4->FormattingEnabled = true;
 			this->listBox4->Location = System::Drawing::Point(760, 63);
-			this->listBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->listBox4->Margin = System::Windows::Forms::Padding(2);
 			this->listBox4->Name = L"listBox4";
 			this->listBox4->Size = System::Drawing::Size(157, 329);
 			this->listBox4->TabIndex = 10;
+			// 
+			// button5
+			// 
+			this->button5->BackColor = System::Drawing::Color::Transparent;
+			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button5->ForeColor = System::Drawing::Color::Red;
+			this->button5->Location = System::Drawing::Point(917, -13);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(54, 45);
+			this->button5->TabIndex = 11;
+			this->button5->Text = L"X";
+			this->button5->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &Summary::button5_Click);
 			// 
 			// Summary
 			// 
@@ -202,6 +220,7 @@ namespace Project1 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
 			this->ClientSize = System::Drawing::Size(983, 460);
+			this->Controls->Add(this->button5);
 			this->Controls->Add(this->listBox4);
 			this->Controls->Add(this->listBox3);
 			this->Controls->Add(this->label5);
@@ -213,7 +232,7 @@ namespace Project1 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Summary";
 			this->Text = L"Summary";
 			this->ResumeLayout(false);
@@ -225,5 +244,8 @@ namespace Project1 {
 	}
 	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+}
 };
 }
