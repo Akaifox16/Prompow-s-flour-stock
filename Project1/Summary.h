@@ -84,7 +84,6 @@ namespace Project1 {
 			this->label1->Size = System::Drawing::Size(136, 42);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Menu :";
-			this->label1->Click += gcnew System::EventHandler(this, &Summary::label1_Click);
 			// 
 			// label2
 			// 
@@ -217,7 +216,6 @@ namespace Project1 {
 			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"Summary";
 			this->Text = L"Summary";
-			this->Load += gcnew System::EventHandler(this, &Summary::Summary_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
