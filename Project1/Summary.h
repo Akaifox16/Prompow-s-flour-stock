@@ -35,6 +35,16 @@ namespace Project1 {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::ListBox^ listBox1;
+
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::ListBox^ listBox2;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::ListBox^ listBox3;
+	private: System::Windows::Forms::ListBox^ listBox4;
 	protected:
 
 	private:
@@ -51,35 +61,157 @@ namespace Project1 {
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->listBox3 = (gcnew System::Windows::Forms::ListBox());
+			this->listBox4 = (gcnew System::Windows::Forms::ListBox());
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 72, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Algerian", 28.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(12, 9);
+			this->label1->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->label1->Location = System::Drawing::Point(23, 21);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(358, 135);
+			this->label1->Size = System::Drawing::Size(171, 54);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Menu";
+			this->label1->Text = L"Menu :";
 			this->label1->Click += gcnew System::EventHandler(this, &Summary::label1_Click);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Algerian", 22.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->label2->Location = System::Drawing::Point(508, 30);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(127, 42);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Sold :";
+			this->label2->Click += gcnew System::EventHandler(this, &Summary::label2_Click);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Algerian", 22.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->label3->Location = System::Drawing::Point(732, 30);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(198, 42);
+			this->label3->TabIndex = 2;
+			this->label3->Text = L"In Stock :";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Algerian", 22.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->label4->Location = System::Drawing::Point(1007, 33);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(187, 42);
+			this->label4->TabIndex = 3;
+			this->label4->Text = L"Amount :";
+			// 
+			// listBox1
+			// 
+			this->listBox1->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 16;
+			this->listBox1->Location = System::Drawing::Point(32, 78);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(443, 404);
+			this->listBox1->TabIndex = 4;
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Algerian", 25.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->label6->Location = System::Drawing::Point(23, 499);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(161, 49);
+			this->label6->TabIndex = 6;
+			this->label6->Text = L"Total";
+			this->label6->Click += gcnew System::EventHandler(this, &Summary::label6_Click);
+			// 
+			// listBox2
+			// 
+			this->listBox2->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->listBox2->FormattingEnabled = true;
+			this->listBox2->ItemHeight = 16;
+			this->listBox2->Location = System::Drawing::Point(506, 75);
+			this->listBox2->Name = L"listBox2";
+			this->listBox2->Size = System::Drawing::Size(187, 404);
+			this->listBox2->TabIndex = 7;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(1095, 499);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(110, 25);
+			this->label5->TabIndex = 8;
+			this->label5->Text = L"Total(Bath)";
+			// 
+			// listBox3
+			// 
+			this->listBox3->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->listBox3->FormattingEnabled = true;
+			this->listBox3->ItemHeight = 16;
+			this->listBox3->Location = System::Drawing::Point(739, 78);
+			this->listBox3->Name = L"listBox3";
+			this->listBox3->Size = System::Drawing::Size(200, 404);
+			this->listBox3->TabIndex = 9;
+			// 
+			// listBox4
+			// 
+			this->listBox4->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->listBox4->FormattingEnabled = true;
+			this->listBox4->ItemHeight = 16;
+			this->listBox4->Location = System::Drawing::Point(1014, 78);
+			this->listBox4->Name = L"listBox4";
+			this->listBox4->Size = System::Drawing::Size(208, 404);
+			this->listBox4->TabIndex = 10;
 			// 
 			// Summary
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1311, 566);
+			this->Controls->Add(this->listBox4);
+			this->Controls->Add(this->listBox3);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->listBox2);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->listBox1);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Name = L"Summary";
 			this->Text = L"Summary";
+			this->Load += gcnew System::EventHandler(this, &Summary::Summary_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
