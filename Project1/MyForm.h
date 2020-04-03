@@ -131,7 +131,7 @@ namespace Project1 {
 			this->label1->ForeColor = System::Drawing::Color::Black;
 			this->label1->Location = System::Drawing::Point(20, 65);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(140, 26);
+			this->label1->Size = System::Drawing::Size(115, 21);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Management";
 			// 
@@ -143,7 +143,7 @@ namespace Project1 {
 			this->label2->ForeColor = System::Drawing::Color::Black;
 			this->label2->Location = System::Drawing::Point(15, 9);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(87, 56);
+			this->label2->Size = System::Drawing::Size(70, 45);
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"SM";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -176,7 +176,7 @@ namespace Project1 {
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->Location = System::Drawing::Point(3, 211);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(160, 70);
+			this->button1->Size = System::Drawing::Size(160, 105);
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"Add chart";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -191,7 +191,7 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::White;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
-			this->button3->Location = System::Drawing::Point(3, 287);
+			this->button3->Location = System::Drawing::Point(3, 322);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(160, 88);
 			this->button3->TabIndex = 9;
@@ -210,7 +210,7 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->Sort->ForeColor = System::Drawing::Color::White;
 			this->Sort->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Sort.Image")));
-			this->Sort->Location = System::Drawing::Point(3, 381);
+			this->Sort->Location = System::Drawing::Point(3, 416);
 			this->Sort->Name = L"Sort";
 			this->Sort->Size = System::Drawing::Size(160, 103);
 			this->Sort->TabIndex = 10;
@@ -225,7 +225,7 @@ namespace Project1 {
 			this->button5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::Color::Red;
-			this->button5->Location = System::Drawing::Point(1072, 3);
+			this->button5->Location = System::Drawing::Point(1050, -13);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(54, 45);
 			this->button5->TabIndex = 9;
@@ -237,10 +237,10 @@ namespace Project1 {
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 20;
+			this->listBox1->ItemHeight = 16;
 			this->listBox1->Location = System::Drawing::Point(211, 40);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(838, 444);
+			this->listBox1->Size = System::Drawing::Size(838, 436);
 			this->listBox1->TabIndex = 10;
 			this->listBox1->Visible = false;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
