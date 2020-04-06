@@ -105,24 +105,24 @@ namespace Project1 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Algerian", 28.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::Highlight;
-			this->label1->Location = System::Drawing::Point(23, 21);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::Salmon;
+			this->label1->Location = System::Drawing::Point(80, 30);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(171, 54);
+			this->label1->Size = System::Drawing::Size(130, 40);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Menu :";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Algerian", 22.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::SystemColors::Highlight;
-			this->label2->Location = System::Drawing::Point(508, 30);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::Color::Salmon;
+			this->label2->Location = System::Drawing::Point(556, 30);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(127, 42);
+			this->label2->Size = System::Drawing::Size(107, 40);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Sold :";
 			this->label2->Click += gcnew System::EventHandler(this, &Summary::label2_Click);
@@ -130,101 +130,113 @@ namespace Project1 {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Algerian", 22.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::SystemColors::Highlight;
-			this->label3->Location = System::Drawing::Point(732, 30);
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::Salmon;
+			this->label3->Location = System::Drawing::Point(788, 30);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(198, 42);
+			this->label3->Size = System::Drawing::Size(156, 40);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"In Stock :";
+			this->label3->Text = L"Instock :";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Algerian", 22.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::SystemColors::Highlight;
-			this->label4->Location = System::Drawing::Point(1019, 30);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::Salmon;
+			this->label4->Location = System::Drawing::Point(1031, 30);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(187, 42);
+			this->label4->Size = System::Drawing::Size(166, 40);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Amount :";
 			// 
 			// listBox1
 			// 
-			this->listBox1->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->listBox1->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			this->listBox1->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->listBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->listBox1->ForeColor = System::Drawing::Color::White;
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(32, 78);
+			this->listBox1->ItemHeight = 27;
+			this->listBox1->Location = System::Drawing::Point(72, 84);
 			this->listBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(443, 404);
+			this->listBox1->Size = System::Drawing::Size(443, 382);
 			this->listBox1->TabIndex = 4;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Summary::listBox1_SelectedIndexChanged);
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Algerian", 25.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::SystemColors::Highlight;
-			this->label6->Location = System::Drawing::Point(23, 498);
+			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(197)), static_cast<System::Int32>(static_cast<System::Byte>(239)),
+				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->label6->Location = System::Drawing::Point(90, 498);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(159, 48);
+			this->label6->Size = System::Drawing::Size(78, 34);
 			this->label6->TabIndex = 6;
 			this->label6->Text = L"Total";
 			this->label6->Click += gcnew System::EventHandler(this, &Summary::label6_Click);
 			// 
 			// listBox2
 			// 
-			this->listBox2->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->listBox2->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			this->listBox2->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->listBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->listBox2->ForeColor = System::Drawing::Color::White;
 			this->listBox2->FormattingEnabled = true;
-			this->listBox2->ItemHeight = 16;
-			this->listBox2->Location = System::Drawing::Point(507, 75);
+			this->listBox2->ItemHeight = 27;
+			this->listBox2->Location = System::Drawing::Point(556, 81);
 			this->listBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(187, 404);
+			this->listBox2->Size = System::Drawing::Size(187, 382);
 			this->listBox2->TabIndex = 7;
 			this->listBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &Summary::listBox2_SelectedIndexChanged);
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(1070, 507);
+			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::White;
+			this->label5->Location = System::Drawing::Point(1056, 498);
 			this->label5->Name = L"label5";
 			this->label5->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->label5->Size = System::Drawing::Size(122, 25);
+			this->label5->Size = System::Drawing::Size(150, 30);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"Total(Bath฿)";
 			// 
 			// listBox3
 			// 
-			this->listBox3->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->listBox3->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			this->listBox3->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->listBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->listBox3->ForeColor = System::Drawing::Color::White;
 			this->listBox3->FormattingEnabled = true;
-			this->listBox3->ItemHeight = 16;
-			this->listBox3->Location = System::Drawing::Point(739, 78);
+			this->listBox3->ItemHeight = 27;
+			this->listBox3->Location = System::Drawing::Point(785, 84);
 			this->listBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBox3->Name = L"listBox3";
-			this->listBox3->Size = System::Drawing::Size(200, 404);
+			this->listBox3->Size = System::Drawing::Size(200, 382);
 			this->listBox3->TabIndex = 9;
+			this->listBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &Summary::listBox3_SelectedIndexChanged);
 			// 
 			// listBox4
 			// 
-			this->listBox4->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->listBox4->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			this->listBox4->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->listBox4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->listBox4->ForeColor = System::Drawing::Color::White;
 			this->listBox4->FormattingEnabled = true;
-			this->listBox4->ItemHeight = 16;
-			this->listBox4->Location = System::Drawing::Point(1013, 78);
+			this->listBox4->ItemHeight = 27;
+			this->listBox4->Location = System::Drawing::Point(1025, 84);
 			this->listBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBox4->Name = L"listBox4";
-			this->listBox4->Size = System::Drawing::Size(208, 404);
+			this->listBox4->Size = System::Drawing::Size(208, 382);
 			this->listBox4->TabIndex = 10;
+			this->listBox4->SelectedIndexChanged += gcnew System::EventHandler(this, &Summary::listBox4_SelectedIndexChanged);
 			// 
 			// button5
 			// 
@@ -300,6 +312,10 @@ private: System::Void Summary_Load(System::Object^ sender, System::EventArgs^ e)
 private: System::Void listBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void listBox3_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void listBox4_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
