@@ -216,12 +216,13 @@ namespace Project1 {
 			// 
 			this->listBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
+			this->listBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->listBox1->ForeColor = System::Drawing::Color::White;
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
+			this->listBox1->ItemHeight = 20;
 			this->listBox1->Location = System::Drawing::Point(210, 86);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(882, 452);
+			this->listBox1->Size = System::Drawing::Size(882, 440);
 			this->listBox1->TabIndex = 10;
 			this->listBox1->Visible = false;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
@@ -301,16 +302,25 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	file.close();
 
 	Summary^ c = gcnew Summary();
+	int total = 0;
+	c->clearListBox();
 	for (int i = 0; i < listed.size(); i++) {
+		total += listed.at(i).sold * listed.at(i).cost;
 		c->UpdateListBox1(marshal_as<String^>(listed.at(i).name) + "\n");
 		std::stringstream ss;
 		std::string sold, stock, amount;
-		ss << listed.at(i).sold  << " " << listed.at(i).stock  << " " << listed.at(i).sold * listed.at(i).cost;
-		ss >> sold >> stock >> amount;
+		ss << listed.at(i).sold  << " " << listed.at(i).stock  << " " << listed.at(i).sold * listed.at(i).cost ;
+		ss >> sold >> stock >> amount ;
 		c->UpdateListBox2(marshal_as<String^>(sold) + "\n");
 		c->UpdateListBox3(marshal_as<String^>(stock) + "\n");
 		c->UpdateListBox4(marshal_as<String^>(amount) + "\n");
 	}
+	std::stringstream str;
+	std::string outTotal, baht;
+	baht = "Baht(ß)";
+	str << total << baht;
+	str >> outTotal;
+	c->UpdateTotal(marshal_as<String^>(outTotal));
 	c->ShowDialog();
 
 
@@ -330,6 +340,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 }
 private: System::Void MyForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	if (this->dragging) {

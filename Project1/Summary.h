@@ -22,6 +22,13 @@ namespace Project1 {
 			//TODO: Add the constructor code here
 			//
 		}
+	public:  void clearListBox()
+	{
+		listBox1->Items->Clear();
+		listBox2->Items->Clear();
+		listBox3->Items->Clear();
+		listBox4->Items->Clear();
+	}
 	public:  void UpdateListBox1(String^ lstValue)
 		{
 			listBox1->Items->Add(lstValue);
@@ -38,7 +45,12 @@ namespace Project1 {
 	{
 		listBox4->Items->Add(lstValue);
 	}
-
+	public:  void UpdateTotal(String^ lstValue)
+	{
+		label5->Text = lstValue;
+	}
+	private: bool dragging;
+	private: Point offset;
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -183,6 +195,7 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(1070, 507);
 			this->label5->Name = L"label5";
+			this->label5->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->label5->Size = System::Drawing::Size(122, 25);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"Total(Bath฿)";
@@ -219,7 +232,7 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::Color::Red;
 			this->button5->Location = System::Drawing::Point(1223, -16);
-			this->button5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button5->Margin = System::Windows::Forms::Padding(4);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(72, 55);
 			this->button5->TabIndex = 11;
@@ -250,6 +263,10 @@ namespace Project1 {
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Summary";
 			this->Text = L"Summary";
+			this->Load += gcnew System::EventHandler(this, &Summary::Summary_Load);
+			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Summary::Summary_MouseDown);
+			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Summary::Summary_MouseMove);
+			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &Summary::Summary_MouseUp);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -261,6 +278,22 @@ namespace Project1 {
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
+}
+private: System::Void Summary_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	this->dragging = true;
+	this->offset = Point(e->X, e->Y);
+}
+private: System::Void Summary_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if (this->dragging) {
+		Point currentScreenPos = PointToScreen(e->Location);
+		Location = Point(currentScreenPos.X - this->offset.X, currentScreenPos.Y - this->offset.Y);
+	}
+}
+private: System::Void Summary_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	this->dragging = false;
+}
+private: System::Void Summary_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->dragging = false;
 }
 };
 }

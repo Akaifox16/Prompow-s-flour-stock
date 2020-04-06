@@ -37,6 +37,8 @@ namespace Project1 {
 				delete components;
 			}
 		}
+	private: bool dragging;
+	private: Point offset;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Label^ label2;
@@ -101,7 +103,7 @@ namespace Project1 {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->Location = System::Drawing::Point(428, 207);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(112, 39);
 			this->button1->TabIndex = 1;
@@ -143,7 +145,7 @@ namespace Project1 {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->Location = System::Drawing::Point(247, 207);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(112, 39);
 			this->button2->TabIndex = 11;
@@ -180,10 +182,13 @@ namespace Project1 {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"chart";
 			this->Text = L"chart";
 			this->Load += gcnew System::EventHandler(this, &chart::chart_Load);
+			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &chart::chart_MouseDown);
+			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &chart::chart_MouseMove);
+			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &chart::chart_MouseUp);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -246,10 +251,24 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 
 }
 private: System::Void chart_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->dragging = false;
 }
 private: System::Void bunifuMaterialTextbox1_OnValueChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void bunifuMaterialTextbox2_OnValueChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void chart_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	this->dragging = true;
+	this->offset = Point(e->X, e->Y);
+}
+private: System::Void chart_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if (this->dragging) {
+		Point currentScreenPos = PointToScreen(e->Location);
+		Location = Point(currentScreenPos.X - this->offset.X, currentScreenPos.Y - this->offset.Y);
+	}
+}
+private: System::Void chart_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	this->dragging = false;
 }
 };
 }
