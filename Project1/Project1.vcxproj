@@ -126,6 +126,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="addBread.cpp" />
     <ClCompile Include="bread.cpp" />
     <ClCompile Include="chart.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -134,6 +135,9 @@
     <ClCompile Include="Summary.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="addBread.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="bread.h" />
     <ClInclude Include="chart.h">
       <FileType>CppForm</FileType>
@@ -146,6 +150,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addBread.resx">
+      <DependentUpon>addBread.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="chart.resx">
       <DependentUpon>chart.h</DependentUpon>
     </EmbeddedResource>
