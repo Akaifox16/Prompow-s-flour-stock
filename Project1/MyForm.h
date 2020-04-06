@@ -125,7 +125,6 @@ namespace Project1 {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(163, 101);
 			this->panel2->TabIndex = 0;
-			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::panel2_Paint);
 			// 
 			// button2
 			// 
@@ -246,7 +245,6 @@ namespace Project1 {
 			this->Name = L"MyForm";
 			this->Text = L"Sales management";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
-			this->DragDrop += gcnew System::Windows::Forms::DragEventHandler(this, &MyForm::MyForm_DragDrop);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseMove);
 			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseUp);
@@ -303,6 +301,16 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	file.close();
 
 	Summary^ c = gcnew Summary();
+	for (int i = 0; i < listed.size(); i++) {
+		c->UpdateListBox1(marshal_as<String^>(listed.at(i).name) + "\n");
+		std::stringstream ss;
+		std::string sold, stock, amount;
+		ss << listed.at(i).sold  << " " << listed.at(i).stock  << " " << listed.at(i).sold * listed.at(i).cost;
+		ss >> sold >> stock >> amount;
+		c->UpdateListBox2(marshal_as<String^>(sold) + "\n");
+		c->UpdateListBox3(marshal_as<String^>(stock) + "\n");
+		c->UpdateListBox4(marshal_as<String^>(amount) + "\n");
+	}
 	c->ShowDialog();
 
 
