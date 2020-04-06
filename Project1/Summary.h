@@ -162,6 +162,7 @@ namespace Project1 {
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(443, 404);
 			this->listBox1->TabIndex = 4;
+			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Summary::listBox1_SelectedIndexChanged);
 			// 
 			// label6
 			// 
@@ -187,6 +188,7 @@ namespace Project1 {
 			this->listBox2->Name = L"listBox2";
 			this->listBox2->Size = System::Drawing::Size(187, 404);
 			this->listBox2->TabIndex = 7;
+			this->listBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &Summary::listBox2_SelectedIndexChanged);
 			// 
 			// label5
 			// 
@@ -294,6 +296,10 @@ private: System::Void Summary_MouseUp(System::Object^ sender, System::Windows::F
 }
 private: System::Void Summary_Load(System::Object^ sender, System::EventArgs^ e) {
 	this->dragging = false;
+}
+private: System::Void listBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

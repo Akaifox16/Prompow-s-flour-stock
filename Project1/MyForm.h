@@ -65,6 +65,19 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::ListBox^ listBox1;
 	private: System::Windows::Forms::Button^ Sort;
+	private: System::Windows::Forms::ListBox^ listBox2;
+	private: System::Windows::Forms::ListBox^ listBox3;
+	private: System::Windows::Forms::ListBox^ listBox4;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label5;
+
+
+
 
 
 
@@ -99,7 +112,19 @@ namespace Project1 {
 			this->Sort = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
+			this->listBox3 = (gcnew System::Windows::Forms::ListBox());
+			this->listBox4 = (gcnew System::Windows::Forms::ListBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->flowLayoutPanel1->SuspendLayout();
+			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// flowLayoutPanel1
@@ -117,9 +142,13 @@ namespace Project1 {
 			// 
 			// panel2
 			// 
-			this->panel2->BackColor = System::Drawing::Color::Gold;
-			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->panel2->Controls->Add(this->label6);
+			this->panel2->Controls->Add(this->label5);
+			this->panel2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 22.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->panel2->ForeColor = System::Drawing::Color::Transparent;
 			this->panel2->Location = System::Drawing::Point(3, 3);
 			this->panel2->Name = L"panel2";
@@ -198,7 +227,8 @@ namespace Project1 {
 			// 
 			// button5
 			// 
-			this->button5->BackColor = System::Drawing::Color::Transparent;
+			this->button5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)));
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -217,15 +247,167 @@ namespace Project1 {
 			this->listBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
 			this->listBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->listBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->listBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->listBox1->ForeColor = System::Drawing::Color::White;
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 20;
-			this->listBox1->Location = System::Drawing::Point(210, 86);
+			this->listBox1->ItemHeight = 23;
+			this->listBox1->Location = System::Drawing::Point(209, 79);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(882, 440);
+			this->listBox1->Size = System::Drawing::Size(294, 437);
 			this->listBox1->TabIndex = 10;
 			this->listBox1->Visible = false;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
+			// 
+			// listBox2
+			// 
+			this->listBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)));
+			this->listBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->listBox2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->listBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->listBox2->ForeColor = System::Drawing::Color::White;
+			this->listBox2->FormattingEnabled = true;
+			this->listBox2->ItemHeight = 23;
+			this->listBox2->Location = System::Drawing::Point(509, 79);
+			this->listBox2->Name = L"listBox2";
+			this->listBox2->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->listBox2->Size = System::Drawing::Size(180, 437);
+			this->listBox2->TabIndex = 11;
+			this->listBox2->Visible = false;
+			// 
+			// listBox3
+			// 
+			this->listBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)));
+			this->listBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->listBox3->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->listBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->listBox3->ForeColor = System::Drawing::Color::White;
+			this->listBox3->FormattingEnabled = true;
+			this->listBox3->ItemHeight = 23;
+			this->listBox3->Location = System::Drawing::Point(695, 79);
+			this->listBox3->Name = L"listBox3";
+			this->listBox3->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->listBox3->Size = System::Drawing::Size(180, 437);
+			this->listBox3->TabIndex = 12;
+			this->listBox3->Visible = false;
+			// 
+			// listBox4
+			// 
+			this->listBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)));
+			this->listBox4->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->listBox4->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->listBox4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->listBox4->ForeColor = System::Drawing::Color::White;
+			this->listBox4->FormattingEnabled = true;
+			this->listBox4->ItemHeight = 23;
+			this->listBox4->Location = System::Drawing::Point(881, 79);
+			this->listBox4->Name = L"listBox4";
+			this->listBox4->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->listBox4->Size = System::Drawing::Size(180, 437);
+			this->listBox4->TabIndex = 13;
+			this->listBox4->Visible = false;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->pictureBox1->Location = System::Drawing::Point(163, 0);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(952, 556);
+			this->pictureBox1->TabIndex = 11;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Visible = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyForm::pictureBox1_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(409, 42);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(94, 34);
+			this->label1->TabIndex = 14;
+			this->label1->Text = L"MENU";
+			this->label1->Visible = false;
+			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_1);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(595, 42);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(86, 34);
+			this->label2->TabIndex = 15;
+			this->label2->Text = L"SOLD";
+			this->label2->Visible = false;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(743, 42);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(134, 34);
+			this->label3->TabIndex = 16;
+			this->label3->Text = L"INSTOCK";
+			this->label3->Visible = false;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(929, 42);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(134, 34);
+			this->label4->TabIndex = 17;
+			this->label4->Text = L"INSTOCK";
+			this->label4->Visible = false;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+				static_cast<System::Int32>(static_cast<System::Byte>(63)));
+			this->label5->Location = System::Drawing::Point(44, 11);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(117, 73);
+			this->label5->TabIndex = 0;
+			this->label5->Text = L"SM";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(62)), static_cast<System::Int32>(static_cast<System::Byte>(120)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->label6->Location = System::Drawing::Point(41, 72);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(99, 17);
+			this->label6->TabIndex = 1;
+			this->label6->Text = L"management";
 			// 
 			// MyForm
 			// 
@@ -234,8 +416,16 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1116, 555);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->listBox4);
+			this->Controls->Add(this->listBox3);
+			this->Controls->Add(this->listBox2);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button5);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->flowLayoutPanel1);
 			this->Font = (gcnew System::Drawing::Font(L"SimSun", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -250,7 +440,11 @@ namespace Project1 {
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseMove);
 			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseUp);
 			this->flowLayoutPanel1->ResumeLayout(false);
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -285,7 +479,15 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		String^ clrString = marshal_as<System::String^>(textline);
 		this->listBox1->Items->Add(clrString + "\n");
 	}
+	pictureBox1->Visible = true;
 	listBox1->Visible = true;
+	listBox2->Visible = true;
+	listBox3->Visible = true;
+	listBox4->Visible = true;
+	label1->Visible = true;
+	label2->Visible = true;
+	label3->Visible = true;
+	label4->Visible = true;
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	std::ifstream file("today_baked.txt");
@@ -354,6 +556,10 @@ private: System::Void MyForm_MouseUp(System::Object^ sender, System::Windows::Fo
 private: System::Void MyForm_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	this->dragging = true;
 	this->offset = Point(e->X, e->Y);
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
