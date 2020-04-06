@@ -460,6 +460,9 @@ private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	listBox1->Items->Clear();
+	listBox2->Items->Clear();
+	listBox3->Items->Clear();
+	listBox4->Items->Clear();
 	listBox1->Visible = true;
 	listBox2->Visible = true;
 	listBox3->Visible = true;
