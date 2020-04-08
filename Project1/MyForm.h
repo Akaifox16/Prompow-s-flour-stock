@@ -491,9 +491,23 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	char name[50];
 	while (std::getline(in, textline)) {
 		//String^ clrString = marshal_as<System::String^>(textline);
+		//bread days;
+		float d, p;
 		std::istringstream iss(textline);
 		std::string sold, stock, amount, day;
+		//iss >> days.amount >> days.day;
 		iss >> name >> stock >> amount >> sold >> day;
+		d = stof(day);
+		p = stof(amount);
+		if (d >= 5 && d<7) {
+			p /= 2;
+
+		}
+		else if (d > 7) {
+			//std::iss->remove();
+			continue;
+		}
+		amount = std::to_string(p);
 		this->listBox1->Items->Add(marshal_as<String^>(name) + "\n");
 		this->listBox2->Items->Add(marshal_as<String^>(sold) + "\n");
 		this->listBox3->Items->Add(marshal_as<String^>(stock) + "\n");
