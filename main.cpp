@@ -11,7 +11,7 @@ struct bread{
     int  stock , day ,sold ;
     float cost ; /*
         stock = จน ที่ผลิต
-        cost = ราคา่
+        cost = ราคา
         day = ผลิตมาแล้วกี่วัน
         sold = ขายไปแล้วเท่าไหร่
     */

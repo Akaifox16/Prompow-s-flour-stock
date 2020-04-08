@@ -1,0 +1,6 @@
+creame_brulee: 5 55 3 23
+wholewheat_bread: 7 55 0 23
+toast_ham_&_cheese: 5 65 5 23
+bunny_butter_cream: 4 75 1 23
+carrot_cake: 18 75 2 23
+Butter_Croissant: 18 50 0 0

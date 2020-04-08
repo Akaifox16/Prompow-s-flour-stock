@@ -1,5 +1,0 @@
-creame_brulee: 8 55 0 0
-wholewheat_bread: 6 55 0 0
-toast_ham_&_cheese: 8 65 0 0
-bunny_butter_cream: 3 75 0 0
-carrot_cake: 5 75 0 0

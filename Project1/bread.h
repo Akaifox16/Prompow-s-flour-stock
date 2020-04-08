@@ -9,7 +9,7 @@ class bread
 {
 public:
     std::string name;// name = ชื่อหนมปัง    
-    int  stock, day, sold , cost;
+    int stock, day, sold , cost;
     int amount(int, int);
 };
 

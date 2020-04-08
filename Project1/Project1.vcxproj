@@ -115,6 +115,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.6\lib\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -123,13 +126,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="addBread.cpp" />
     <ClCompile Include="bread.cpp" />
     <ClCompile Include="chart.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="MyForm11.cpp" />
     <ClCompile Include="Summary.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="addBread.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="bread.h" />
     <ClInclude Include="chart.h">
       <FileType>CppForm</FileType>
@@ -142,6 +150,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addBread.resx">
+      <DependentUpon>addBread.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="chart.resx">
       <DependentUpon>chart.h</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\today_baked.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
