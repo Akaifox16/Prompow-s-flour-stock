@@ -485,37 +485,34 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	label2->Visible = true;
 	label3->Visible = true;
 	label4->Visible = true;
+	//ลดล้างสต็อค แต่มีบัคคิดราคา ต้องเปลี่ยน datatype ของ cost ในคลาส bread
 	std::ifstream in("today_baked.txt");
 	std::string textline;
 	std::vector<bread> listed;
 	char name[50];
 	while (std::getline(in, textline)) {
-		//String^ clrString = marshal_as<System::String^>(textline);
-		//bread days;
 		float d, p;
 		std::istringstream iss(textline);
 		std::string sold, stock, amount, day;
-		//iss >> days.amount >> days.day;
 		iss >> name >> stock >> amount >> sold >> day;
 		d = stof(day);
 		p = stof(amount);
-		if (d >= 5 && d<7) {
-			p /= 2;
+		if (d >= 5) {
+			p /= 1.5;
 
 		}
-		else if (d > 7) {
+	/*	else if (d > 7) {
 			//std::iss->remove();
 			continue;
-		}
-		amount = std::to_string(p);
+		}*/
+		if(p - int(p) > 0.75 ){ amount = std::to_string(int(p) + 1); }
+		else if(p - int(p) > 0.5){ amount = std::to_string(int(p)) + ".75"; }
+		else if (p - int(p) > 0.25){ amount = std::to_string(int(p)) + ".50"; }
+		else if (p - int(p) > 0) { amount = std::to_string(int(p))+ ".25"; }
 		this->listBox1->Items->Add(marshal_as<String^>(name) + "\n");
 		this->listBox2->Items->Add(marshal_as<String^>(sold) + "\n");
 		this->listBox3->Items->Add(marshal_as<String^>(stock) + "\n");
 		this->listBox4->Items->Add(marshal_as<String^>(amount) + "\n");
-		/*c->UpdateListBox1(marshal_as<String^>(listed.at(i).name) + "\n");
-		c->UpdateListBox2(marshal_as<String^>(tmp.sold) + "\n");
-		c->UpdateListBox3(marshal_as<String^>(tmp.stock) + "\n");
-		c->UpdateListBox4(marshal_as<String^>(tmp.amount) + "\n"); */
 	}
 	in.close();
 
