@@ -222,7 +222,7 @@ namespace Project1 {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(163, 73);
 			this->button1->TabIndex = 8;
-			this->button1->Text = L"Add chart";
+			this->button1->Text = L"Retail";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
@@ -572,6 +572,18 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	std::ifstream file("today_baked.txt");
+	std::string textline;
+	std::vector<bread> listed;
+	char name[50];
+	while (std::getline(file, textline)) {
+		bread tmp;
+		std::istringstream iss(textline);
+		iss >> name >> tmp.stock >> tmp.cost >> tmp.sold >> tmp.day;
+		tmp.name = name;
+		listed.push_back(tmp);
+	}
+	file.close();
 	
 }
 private: System::Void MyForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
