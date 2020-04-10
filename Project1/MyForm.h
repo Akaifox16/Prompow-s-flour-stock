@@ -86,6 +86,7 @@ namespace Project1 {
 
 
 
+
 	private: System::ComponentModel::IContainer^ components;
 	protected:
 
@@ -131,11 +132,11 @@ namespace Project1 {
 			// flowLayoutPanel1
 			// 
 			this->flowLayoutPanel1->Controls->Add(this->panel2);
-			this->flowLayoutPanel1->Controls->Add(this->button4);
 			this->flowLayoutPanel1->Controls->Add(this->button2);
 			this->flowLayoutPanel1->Controls->Add(this->button1);
 			this->flowLayoutPanel1->Controls->Add(this->Sort);
 			this->flowLayoutPanel1->Controls->Add(this->button3);
+			this->flowLayoutPanel1->Controls->Add(this->button4);
 			this->flowLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(0, 0);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
@@ -154,7 +155,7 @@ namespace Project1 {
 			this->panel2->ForeColor = System::Drawing::Color::Transparent;
 			this->panel2->Location = System::Drawing::Point(3, 3);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(163, 101);
+			this->panel2->Size = System::Drawing::Size(163, 104);
 			this->panel2->TabIndex = 0;
 			// 
 			// label5
@@ -164,7 +165,7 @@ namespace Project1 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
 				static_cast<System::Int32>(static_cast<System::Byte>(63)));
-			this->label5->Location = System::Drawing::Point(43, -3);
+			this->label5->Location = System::Drawing::Point(49, 3);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(117, 73);
 			this->label5->TabIndex = 0;
@@ -173,24 +174,31 @@ namespace Project1 {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(62)), static_cast<System::Int32>(static_cast<System::Byte>(120)),
 				static_cast<System::Int32>(static_cast<System::Byte>(138)));
-			this->label6->Location = System::Drawing::Point(41, 72);
+			this->label6->Location = System::Drawing::Point(25, 70);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(99, 17);
+			this->label6->Size = System::Drawing::Size(122, 21);
 			this->label6->TabIndex = 1;
 			this->label6->Text = L"management";
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(3, 110);
+			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
+				static_cast<System::Int32>(static_cast<System::Byte>(163)));
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button4->ForeColor = System::Drawing::Color::White;
+			this->button4->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
+			this->button4->Location = System::Drawing::Point(3, 497);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(160, 105);
+			this->button4->Size = System::Drawing::Size(160, 55);
 			this->button4->TabIndex = 18;
-			this->button4->Text = L"baked today";
-			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Text = L"Add baked today";
+			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click_1);
 			// 
 			// button2
@@ -201,9 +209,9 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::White;
 			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
-			this->button2->Location = System::Drawing::Point(3, 221);
+			this->button2->Location = System::Drawing::Point(3, 113);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(163, 77);
+			this->button2->Size = System::Drawing::Size(163, 90);
 			this->button2->TabIndex = 7;
 			this->button2->Text = L"Dashboard";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -218,9 +226,9 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::White;
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
-			this->button1->Location = System::Drawing::Point(3, 304);
+			this->button1->Location = System::Drawing::Point(3, 209);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(163, 73);
+			this->button1->Size = System::Drawing::Size(163, 90);
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"Retail";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -237,9 +245,9 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->Sort->ForeColor = System::Drawing::Color::White;
 			this->Sort->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Sort.Image")));
-			this->Sort->Location = System::Drawing::Point(3, 383);
+			this->Sort->Location = System::Drawing::Point(3, 305);
 			this->Sort->Name = L"Sort";
-			this->Sort->Size = System::Drawing::Size(163, 69);
+			this->Sort->Size = System::Drawing::Size(163, 90);
 			this->Sort->TabIndex = 10;
 			this->Sort->Text = L"Sort";
 			this->Sort->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -254,9 +262,9 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::White;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
-			this->button3->Location = System::Drawing::Point(3, 458);
+			this->button3->Location = System::Drawing::Point(3, 401);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(163, 74);
+			this->button3->Size = System::Drawing::Size(163, 90);
 			this->button3->TabIndex = 9;
 			this->button3->Text = L"Summary";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::BottomCenter;

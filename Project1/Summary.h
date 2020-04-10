@@ -110,7 +110,7 @@ namespace Project1 {
 			this->label1->ForeColor = System::Drawing::Color::Salmon;
 			this->label1->Location = System::Drawing::Point(80, 30);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(130, 40);
+			this->label1->Size = System::Drawing::Size(126, 40);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Menu :";
 			// 
@@ -122,7 +122,7 @@ namespace Project1 {
 			this->label2->ForeColor = System::Drawing::Color::Salmon;
 			this->label2->Location = System::Drawing::Point(556, 30);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(107, 40);
+			this->label2->Size = System::Drawing::Size(103, 40);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Sold :";
 			this->label2->Click += gcnew System::EventHandler(this, &Summary::label2_Click);
@@ -135,7 +135,7 @@ namespace Project1 {
 			this->label3->ForeColor = System::Drawing::Color::Salmon;
 			this->label3->Location = System::Drawing::Point(788, 30);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(156, 40);
+			this->label3->Size = System::Drawing::Size(150, 40);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Instock :";
 			// 
@@ -147,7 +147,7 @@ namespace Project1 {
 			this->label4->ForeColor = System::Drawing::Color::Salmon;
 			this->label4->Location = System::Drawing::Point(1031, 30);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(166, 40);
+			this->label4->Size = System::Drawing::Size(161, 40);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Amount :";
 			// 
@@ -204,9 +204,10 @@ namespace Project1 {
 			this->label5->Location = System::Drawing::Point(1056, 498);
 			this->label5->Name = L"label5";
 			this->label5->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->label5->Size = System::Drawing::Size(150, 30);
+			this->label5->Size = System::Drawing::Size(157, 30);
 			this->label5->TabIndex = 8;
-			this->label5->Text = L"Total(Bath฿)";
+			this->label5->Text = L"Total (Bath฿)";
+			this->label5->Click += gcnew System::EventHandler(this, &Summary::label5_Click);
 			// 
 			// listBox3
 			// 
@@ -316,6 +317,8 @@ private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, Syst
 private: System::Void listBox3_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void listBox4_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
