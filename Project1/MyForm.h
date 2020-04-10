@@ -638,8 +638,6 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		this->listBox4->Items->Add(marshal_as<String^>(amounto) + "\n");
 	}
 	this->listBox5->Items->Add(marshal_as<String^>(listed.at(0).name) + "\n");
-	this->listBox5->Visible = true;
-	this->label7->Visible = true;
 }
 private: System::Void MyForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	if (this->dragging) {
