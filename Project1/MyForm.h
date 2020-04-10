@@ -53,6 +53,7 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^ button2;
 	private: bool dragging;
 	private: Point offset;
+		 
 
 
 
@@ -111,11 +112,11 @@ namespace Project1 {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->Sort = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
@@ -157,6 +158,7 @@ namespace Project1 {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(163, 104);
 			this->panel2->TabIndex = 0;
+			this->panel2->Click += gcnew System::EventHandler(this, &MyForm::panel2_Click_1);
 			// 
 			// label5
 			// 
@@ -167,9 +169,10 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(63)));
 			this->label5->Location = System::Drawing::Point(49, 3);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(117, 73);
+			this->label5->Size = System::Drawing::Size(93, 58);
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"SM";
+			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
 			// 
 			// label6
 			// 
@@ -180,26 +183,10 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(138)));
 			this->label6->Location = System::Drawing::Point(25, 70);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(122, 21);
+			this->label6->Size = System::Drawing::Size(99, 17);
 			this->label6->TabIndex = 1;
 			this->label6->Text = L"management";
-			// 
-			// button4
-			// 
-			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
-				static_cast<System::Int32>(static_cast<System::Byte>(163)));
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button4->ForeColor = System::Drawing::Color::White;
-			this->button4->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
-			this->button4->Location = System::Drawing::Point(3, 497);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(160, 55);
-			this->button4->TabIndex = 18;
-			this->button4->Text = L"Add baked today";
-			this->button4->UseVisualStyleBackColor = false;
-			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click_1);
+			this->label6->Click += gcnew System::EventHandler(this, &MyForm::label6_Click);
 			// 
 			// button2
 			// 
@@ -271,6 +258,23 @@ namespace Project1 {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
+				static_cast<System::Int32>(static_cast<System::Byte>(163)));
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button4->ForeColor = System::Drawing::Color::White;
+			this->button4->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
+			this->button4->Location = System::Drawing::Point(3, 497);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(160, 55);
+			this->button4->TabIndex = 18;
+			this->button4->Text = L"Add baked today";
+			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click_1);
+			// 
 			// button5
 			// 
 			this->button5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
@@ -298,7 +302,7 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox1->ForeColor = System::Drawing::Color::White;
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 23;
+			this->listBox1->ItemHeight = 19;
 			this->listBox1->Location = System::Drawing::Point(209, 79);
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(294, 437);
@@ -316,10 +320,10 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox2->ForeColor = System::Drawing::Color::White;
 			this->listBox2->FormattingEnabled = true;
-			this->listBox2->ItemHeight = 23;
+			this->listBox2->ItemHeight = 19;
 			this->listBox2->Location = System::Drawing::Point(509, 79);
 			this->listBox2->Name = L"listBox2";
-			this->listBox2->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->listBox2->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->listBox2->Size = System::Drawing::Size(180, 437);
 			this->listBox2->TabIndex = 11;
 			this->listBox2->Visible = false;
@@ -334,10 +338,10 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox3->ForeColor = System::Drawing::Color::White;
 			this->listBox3->FormattingEnabled = true;
-			this->listBox3->ItemHeight = 23;
+			this->listBox3->ItemHeight = 19;
 			this->listBox3->Location = System::Drawing::Point(695, 79);
 			this->listBox3->Name = L"listBox3";
-			this->listBox3->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->listBox3->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->listBox3->Size = System::Drawing::Size(180, 437);
 			this->listBox3->TabIndex = 12;
 			this->listBox3->Visible = false;
@@ -352,10 +356,10 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox4->ForeColor = System::Drawing::Color::White;
 			this->listBox4->FormattingEnabled = true;
-			this->listBox4->ItemHeight = 23;
+			this->listBox4->ItemHeight = 19;
 			this->listBox4->Location = System::Drawing::Point(881, 79);
 			this->listBox4->Name = L"listBox4";
-			this->listBox4->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->listBox4->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->listBox4->Size = System::Drawing::Size(180, 437);
 			this->listBox4->TabIndex = 13;
 			this->listBox4->Visible = false;
@@ -370,7 +374,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label1->Location = System::Drawing::Point(398, 42);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(94, 34);
+			this->label1->Size = System::Drawing::Size(73, 27);
 			this->label1->TabIndex = 14;
 			this->label1->Text = L"MENU";
 			this->label1->Visible = false;
@@ -386,7 +390,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label2->Location = System::Drawing::Point(595, 42);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(86, 34);
+			this->label2->Size = System::Drawing::Size(66, 27);
 			this->label2->TabIndex = 15;
 			this->label2->Text = L"SOLD";
 			this->label2->Visible = false;
@@ -401,7 +405,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label3->Location = System::Drawing::Point(736, 42);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(134, 34);
+			this->label3->Size = System::Drawing::Size(103, 27);
 			this->label3->TabIndex = 16;
 			this->label3->Text = L"INSTOCK";
 			this->label3->Visible = false;
@@ -416,7 +420,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label4->Location = System::Drawing::Point(949, 42);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(92, 34);
+			this->label4->Size = System::Drawing::Size(71, 27);
 			this->label4->TabIndex = 17;
 			this->label4->Text = L"PRICE";
 			this->label4->Visible = false;
@@ -438,6 +442,7 @@ namespace Project1 {
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->flowLayoutPanel1);
+			this->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Font = (gcnew System::Drawing::Font(L"SimSun", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(62)), static_cast<System::Int32>(static_cast<System::Byte>(120)),
@@ -473,6 +478,7 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	Close();
+	
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	chart^ c = gcnew chart();
@@ -632,11 +638,29 @@ private: System::Void MyForm_MouseDown(System::Object^ sender, System::Windows::
 	this->dragging = true;
 	this->offset = Point(e->X, e->Y);
 }
-private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
 private: System::Void button4_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	addBread^ addB = gcnew addBread();
 	addB->ShowDialog();
+}
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+	listBox1->Visible = false;
+	listBox2->Visible = false;
+	listBox3->Visible = false;
+	listBox4->Visible = false;
+	label1->Visible = false;
+	label2->Visible = false;
+	label3->Visible = false;
+	label4->Visible = false;
+}
+private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+	listBox1->Visible = false;
+	listBox2->Visible = false;
+	listBox3->Visible = false;
+	listBox4->Visible = false;
+	label1->Visible = false;
+	label2->Visible = false;
+	label3->Visible = false;
+	label4->Visible = false;
 }
 };
 }

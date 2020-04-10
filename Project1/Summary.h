@@ -108,9 +108,10 @@ namespace Project1 {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::Salmon;
-			this->label1->Location = System::Drawing::Point(80, 30);
+			this->label1->Location = System::Drawing::Point(60, 24);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(126, 40);
+			this->label1->Size = System::Drawing::Size(103, 33);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Menu :";
 			// 
@@ -120,9 +121,10 @@ namespace Project1 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::Salmon;
-			this->label2->Location = System::Drawing::Point(556, 30);
+			this->label2->Location = System::Drawing::Point(417, 24);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(103, 40);
+			this->label2->Size = System::Drawing::Size(86, 33);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Sold :";
 			this->label2->Click += gcnew System::EventHandler(this, &Summary::label2_Click);
@@ -133,9 +135,10 @@ namespace Project1 {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::Salmon;
-			this->label3->Location = System::Drawing::Point(788, 30);
+			this->label3->Location = System::Drawing::Point(591, 24);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(150, 40);
+			this->label3->Size = System::Drawing::Size(125, 33);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Instock :";
 			// 
@@ -145,9 +148,10 @@ namespace Project1 {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::Salmon;
-			this->label4->Location = System::Drawing::Point(1031, 30);
+			this->label4->Location = System::Drawing::Point(773, 24);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(161, 40);
+			this->label4->Size = System::Drawing::Size(132, 33);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Amount :";
 			// 
@@ -158,11 +162,11 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox1->ForeColor = System::Drawing::Color::White;
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 27;
-			this->listBox1->Location = System::Drawing::Point(72, 84);
-			this->listBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->listBox1->ItemHeight = 22;
+			this->listBox1->Location = System::Drawing::Point(54, 68);
+			this->listBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(443, 382);
+			this->listBox1->Size = System::Drawing::Size(333, 290);
 			this->listBox1->TabIndex = 4;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Summary::listBox1_SelectedIndexChanged);
 			// 
@@ -173,9 +177,10 @@ namespace Project1 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(197)), static_cast<System::Int32>(static_cast<System::Byte>(239)),
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->label6->Location = System::Drawing::Point(90, 498);
+			this->label6->Location = System::Drawing::Point(68, 405);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(78, 34);
+			this->label6->Size = System::Drawing::Size(62, 27);
 			this->label6->TabIndex = 6;
 			this->label6->Text = L"Total";
 			this->label6->Click += gcnew System::EventHandler(this, &Summary::label6_Click);
@@ -187,11 +192,12 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox2->ForeColor = System::Drawing::Color::White;
 			this->listBox2->FormattingEnabled = true;
-			this->listBox2->ItemHeight = 27;
-			this->listBox2->Location = System::Drawing::Point(556, 81);
-			this->listBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->listBox2->ItemHeight = 22;
+			this->listBox2->Location = System::Drawing::Point(417, 66);
+			this->listBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(187, 382);
+			this->listBox2->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->listBox2->Size = System::Drawing::Size(141, 290);
 			this->listBox2->TabIndex = 7;
 			this->listBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &Summary::listBox2_SelectedIndexChanged);
 			// 
@@ -201,10 +207,11 @@ namespace Project1 {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::White;
-			this->label5->Location = System::Drawing::Point(1056, 498);
+			this->label5->Location = System::Drawing::Point(792, 405);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
 			this->label5->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->label5->Size = System::Drawing::Size(157, 30);
+			this->label5->Size = System::Drawing::Size(125, 23);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"Total (Bath฿)";
 			this->label5->Click += gcnew System::EventHandler(this, &Summary::label5_Click);
@@ -216,11 +223,12 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox3->ForeColor = System::Drawing::Color::White;
 			this->listBox3->FormattingEnabled = true;
-			this->listBox3->ItemHeight = 27;
-			this->listBox3->Location = System::Drawing::Point(785, 84);
-			this->listBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->listBox3->ItemHeight = 22;
+			this->listBox3->Location = System::Drawing::Point(589, 68);
+			this->listBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listBox3->Name = L"listBox3";
-			this->listBox3->Size = System::Drawing::Size(200, 382);
+			this->listBox3->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->listBox3->Size = System::Drawing::Size(151, 290);
 			this->listBox3->TabIndex = 9;
 			this->listBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &Summary::listBox3_SelectedIndexChanged);
 			// 
@@ -231,11 +239,12 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox4->ForeColor = System::Drawing::Color::White;
 			this->listBox4->FormattingEnabled = true;
-			this->listBox4->ItemHeight = 27;
-			this->listBox4->Location = System::Drawing::Point(1025, 84);
-			this->listBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->listBox4->ItemHeight = 22;
+			this->listBox4->Location = System::Drawing::Point(769, 68);
+			this->listBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listBox4->Name = L"listBox4";
-			this->listBox4->Size = System::Drawing::Size(208, 382);
+			this->listBox4->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->listBox4->Size = System::Drawing::Size(157, 290);
 			this->listBox4->TabIndex = 10;
 			this->listBox4->SelectedIndexChanged += gcnew System::EventHandler(this, &Summary::listBox4_SelectedIndexChanged);
 			// 
@@ -246,10 +255,9 @@ namespace Project1 {
 			this->button5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::Color::Red;
-			this->button5->Location = System::Drawing::Point(1223, -16);
-			this->button5->Margin = System::Windows::Forms::Padding(4);
+			this->button5->Location = System::Drawing::Point(917, -13);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(72, 55);
+			this->button5->Size = System::Drawing::Size(54, 45);
 			this->button5->TabIndex = 11;
 			this->button5->Text = L"X";
 			this->button5->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -258,11 +266,11 @@ namespace Project1 {
 			// 
 			// Summary
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
-			this->ClientSize = System::Drawing::Size(1311, 566);
+			this->ClientSize = System::Drawing::Size(983, 460);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->listBox4);
 			this->Controls->Add(this->listBox3);
@@ -275,7 +283,7 @@ namespace Project1 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"Summary";
 			this->Text = L"Summary";
 			this->Load += gcnew System::EventHandler(this, &Summary::Summary_Load);
