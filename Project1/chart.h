@@ -2,6 +2,7 @@
 #include "bread.h"
 #include <msclr\marshal_cppstd.h>
 #include "Added.h"
+#include "fail.h"
 
 namespace Project1 {
 	using namespace msclr::interop;
@@ -88,12 +89,12 @@ namespace Project1 {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(336, 23);
+			this->label1->Location = System::Drawing::Point(306, 26);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(107, 40);
+			this->label1->Size = System::Drawing::Size(176, 32);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Chart";
+			this->label1->Text = L"Which to sell";
 			this->label1->Click += gcnew System::EventHandler(this, &chart::label1_Click);
 			// 
 			// button1
@@ -121,7 +122,7 @@ namespace Project1 {
 			this->label2->Location = System::Drawing::Point(91, 115);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(84, 28);
+			this->label2->Size = System::Drawing::Size(67, 23);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Name";
 			// 
@@ -134,7 +135,7 @@ namespace Project1 {
 			this->label5->Location = System::Drawing::Point(437, 115);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(103, 28);
+			this->label5->Size = System::Drawing::Size(82, 23);
 			this->label5->TabIndex = 9;
 			this->label5->Text = L"Amount";
 			// 
@@ -158,19 +159,19 @@ namespace Project1 {
 			// 
 			this->textBox1->Location = System::Drawing::Point(199, 120);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(160, 23);
+			this->textBox1->Size = System::Drawing::Size(160, 20);
 			this->textBox1->TabIndex = 12;
 			// 
 			// textBox2
 			// 
 			this->textBox2->Location = System::Drawing::Point(558, 120);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 23);
+			this->textBox2->Size = System::Drawing::Size(100, 20);
 			this->textBox2->TabIndex = 13;
 			// 
 			// chart
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 17);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
@@ -187,6 +188,7 @@ namespace Project1 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"chart";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"chart";
 			this->Load += gcnew System::EventHandler(this, &chart::chart_Load);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &chart::chart_MouseDown);
@@ -235,8 +237,13 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	for (int j = 0; j < listed.size(); j++) {
 		if (nameofs == listed[j].name) {
 			if (soldint > listed[j].stock) {
-				//massage box
+				fail^ b = gcnew fail();
+				b->ShowDialog();
 				break;
+			}
+			else {
+				Added^ a = gcnew Added();
+				a->ShowDialog();
 			}
 			listed[j].sold += soldint;
 			listed[j].stock -=   soldint;
@@ -248,8 +255,6 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		String^ str = marshal_as<String^>(oss.str());
 		sw->Write(str );
 	}
-	Added^ a = gcnew Added();
-	a->ShowDialog();
 	sw->Close();
 	
 }

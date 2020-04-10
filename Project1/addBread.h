@@ -3,6 +3,7 @@
 #include <sstream>
 #include <string>
 #include <msclr\marshal_cppstd.h>
+#include "Added.h"
 
 namespace Project1 {
 	using namespace msclr::interop;
@@ -85,9 +86,10 @@ namespace Project1 {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(91, 115);
+			this->label1->Location = System::Drawing::Point(68, 93);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(84, 28);
+			this->label1->Size = System::Drawing::Size(67, 23);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Name";
 			// 
@@ -97,9 +99,10 @@ namespace Project1 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(282, 178);
+			this->label2->Location = System::Drawing::Point(212, 145);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(69, 28);
+			this->label2->Size = System::Drawing::Size(56, 23);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Price";
 			// 
@@ -109,9 +112,10 @@ namespace Project1 {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(437, 115);
+			this->label3->Location = System::Drawing::Point(328, 93);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(103, 28);
+			this->label3->Size = System::Drawing::Size(82, 23);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Amount";
 			// 
@@ -119,27 +123,30 @@ namespace Project1 {
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(199, 120);
+			this->textBox1->Location = System::Drawing::Point(149, 98);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(160, 23);
+			this->textBox1->Size = System::Drawing::Size(121, 20);
 			this->textBox1->TabIndex = 3;
 			// 
 			// textBox2
 			// 
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(373, 183);
+			this->textBox2->Location = System::Drawing::Point(280, 149);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 23);
+			this->textBox2->Size = System::Drawing::Size(76, 20);
 			this->textBox2->TabIndex = 4;
 			// 
 			// textBox3
 			// 
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(558, 120);
+			this->textBox3->Location = System::Drawing::Point(418, 98);
+			this->textBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(100, 23);
+			this->textBox3->Size = System::Drawing::Size(76, 20);
 			this->textBox3->TabIndex = 5;
 			// 
 			// button1
@@ -148,9 +155,10 @@ namespace Project1 {
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(247, 251);
+			this->button1->Location = System::Drawing::Point(185, 204);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(112, 41);
+			this->button1->Size = System::Drawing::Size(84, 33);
 			this->button1->TabIndex = 6;
 			this->button1->Text = L"Add";
 			this->button1->UseVisualStyleBackColor = false;
@@ -162,9 +170,10 @@ namespace Project1 {
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(428, 251);
+			this->button2->Location = System::Drawing::Point(321, 204);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(112, 41);
+			this->button2->Size = System::Drawing::Size(84, 33);
 			this->button2->TabIndex = 7;
 			this->button2->Text = L"Close";
 			this->button2->UseVisualStyleBackColor = false;
@@ -176,29 +185,31 @@ namespace Project1 {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::White;
-			this->label4->Location = System::Drawing::Point(264, 23);
+			this->label4->Location = System::Drawing::Point(198, 19);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(193, 40);
+			this->label4->Size = System::Drawing::Size(157, 32);
 			this->label4->TabIndex = 8;
 			this->label4->Text = L"Add Bread";
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(473, 12);
+			this->pictureBox1->Location = System::Drawing::Point(355, 10);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(51, 60);
+			this->pictureBox1->Size = System::Drawing::Size(38, 49);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 9;
 			this->pictureBox1->TabStop = false;
 			// 
 			// addBread
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
-			this->ClientSize = System::Drawing::Size(780, 340);
+			this->ClientSize = System::Drawing::Size(585, 276);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button2);
@@ -211,7 +222,9 @@ namespace Project1 {
 			this->Controls->Add(this->label1);
 			this->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"addBread";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"addBread";
 			this->Load += gcnew System::EventHandler(this, &addBread::addBread_Load);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &addBread::addBread_MouseDown);
@@ -243,6 +256,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	std::fstream out("today_baked.txt" , std::fstream::out | std::fstream::app);
 	out << name << " " << strAmount << " " <<strPrice << " 0 0"   << "\n";
 	out.close();
+
+	Added^ a = gcnew Added();
+	a->ShowDialog();
 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {

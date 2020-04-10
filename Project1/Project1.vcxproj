@@ -130,9 +130,9 @@
     <ClCompile Include="Added.cpp" />
     <ClCompile Include="bread.cpp" />
     <ClCompile Include="chart.cpp" />
+    <ClCompile Include="fail.cpp" />
+    <ClCompile Include="makesure.cpp" />
     <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="MyForm1.cpp" />
-    <ClCompile Include="MyForm11.cpp" />
     <ClCompile Include="Summary.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +144,12 @@
     </ClInclude>
     <ClInclude Include="bread.h" />
     <ClInclude Include="chart.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="fail.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="makesure.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm.h">
@@ -162,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="chart.resx">
       <DependentUpon>chart.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fail.resx">
+      <DependentUpon>fail.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="makesure.resx">
+      <DependentUpon>makesure.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>

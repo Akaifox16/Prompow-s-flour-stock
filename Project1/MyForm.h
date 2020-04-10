@@ -5,6 +5,7 @@
 #include "addBread.h"
 #include "Added.h"
 #include <algorithm>
+#include "makesure.h"
 
 
 namespace Project1 {
@@ -80,6 +81,8 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::ListBox^ listBox5;
 
 
 
@@ -128,6 +131,8 @@ namespace Project1 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->listBox5 = (gcnew System::Windows::Forms::ListBox());
 			this->flowLayoutPanel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->SuspendLayout();
@@ -306,7 +311,7 @@ namespace Project1 {
 			this->listBox1->ItemHeight = 19;
 			this->listBox1->Location = System::Drawing::Point(209, 79);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(294, 437);
+			this->listBox1->Size = System::Drawing::Size(294, 418);
 			this->listBox1->TabIndex = 10;
 			this->listBox1->Visible = false;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
@@ -325,7 +330,7 @@ namespace Project1 {
 			this->listBox2->Location = System::Drawing::Point(509, 79);
 			this->listBox2->Name = L"listBox2";
 			this->listBox2->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->listBox2->Size = System::Drawing::Size(180, 437);
+			this->listBox2->Size = System::Drawing::Size(180, 418);
 			this->listBox2->TabIndex = 11;
 			this->listBox2->Visible = false;
 			// 
@@ -343,7 +348,7 @@ namespace Project1 {
 			this->listBox3->Location = System::Drawing::Point(695, 79);
 			this->listBox3->Name = L"listBox3";
 			this->listBox3->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->listBox3->Size = System::Drawing::Size(180, 437);
+			this->listBox3->Size = System::Drawing::Size(180, 418);
 			this->listBox3->TabIndex = 12;
 			this->listBox3->Visible = false;
 			// 
@@ -361,7 +366,7 @@ namespace Project1 {
 			this->listBox4->Location = System::Drawing::Point(881, 79);
 			this->listBox4->Name = L"listBox4";
 			this->listBox4->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->listBox4->Size = System::Drawing::Size(180, 437);
+			this->listBox4->Size = System::Drawing::Size(180, 418);
 			this->listBox4->TabIndex = 13;
 			this->listBox4->Visible = false;
 			// 
@@ -425,6 +430,36 @@ namespace Project1 {
 			this->label4->Text = L"PRICE";
 			this->label4->Visible = false;
 			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->BackColor = System::Drawing::Color::Transparent;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
+			this->label7->ForeColor = System::Drawing::Color::Blue;
+			this->label7->Location = System::Drawing::Point(662, 506);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(150, 27);
+			this->label7->TabIndex = 18;
+			this->label7->Text = L"Now Best sell";
+			// 
+			// listBox5
+			// 
+			this->listBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(40)), static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)));
+			this->listBox5->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->listBox5->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->listBox5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->listBox5->ForeColor = System::Drawing::Color::White;
+			this->listBox5->FormattingEnabled = true;
+			this->listBox5->ItemHeight = 19;
+			this->listBox5->Location = System::Drawing::Point(836, 514);
+			this->listBox5->Name = L"listBox5";
+			this->listBox5->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->listBox5->Size = System::Drawing::Size(258, 19);
+			this->listBox5->TabIndex = 19;
+			this->listBox5->Visible = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -432,6 +467,8 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1116, 555);
+			this->Controls->Add(this->listBox5);
+			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -450,6 +487,7 @@ namespace Project1 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"MyForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Sales management";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseDown);
@@ -538,75 +576,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	std::ifstream file("today_baked.txt");
-	std::string textline;
-	std::vector<bread> listed;
-	char name[50];
-	while (std::getline(file, textline)) {
-		bread tmp;
-		std::istringstream iss(textline);
-		iss >> name >> tmp.stock >> tmp.cost >> tmp.sold >> tmp.day;
-		tmp.name = name;
-		listed.push_back(tmp);
-	}
-	file.close();
-
-	Summary^ c = gcnew Summary();
-	double total = 0;
-	c->clearListBox();
-	for (int i = 0; i < listed.size(); i++) {
-		
-		double p;
-		std::string pay;
-		p = listed.at(i).cost;
-
-		if (listed.at(i).day >= 5) {
-			p /= 1.5;
-		}
-
-		if (p - int(p) > 0.75) { pay = std::to_string(int(p) + 1); }
-		else if (p - int(p) > 0.5) { pay = std::to_string(int(p)) + ".75"; }
-		else if (p - int(p) > 0.25) { pay = std::to_string(int(p)) + ".50"; }
-		else if (p - int(p) > 0) { pay = std::to_string(int(p)) + ".25"; }
-		else { pay = std::to_string(int(p)); }
-		p = stof(pay);
-		
-		double N_amount = listed.at(i).amount(listed.at(i).sold, p);
-		
-		total += N_amount;
-		c->UpdateListBox1(marshal_as<String^>(listed.at(i).name) + "\n");
-		std::stringstream ss;
-		std::string sold, stock, amount;
-		ss << listed.at(i).sold << " " << listed.at(i).stock << " " << N_amount;
-		ss >> sold >> stock >> amount;
-
-		c->UpdateListBox2(marshal_as<String^>(sold) + "\n");
-		c->UpdateListBox3(marshal_as<String^>(stock) + "\n");
-		c->UpdateListBox4(marshal_as<String^>(amount) + "\n");
-	}
-	std::stringstream str;
-	std::string outTotal, baht;
-	baht = "  Baht(ß)";
-	str << total;
-	str >> outTotal;
-	c->UpdateTotal(marshal_as<String^>(outTotal + baht));
-	c->ShowDialog();
-
-
-	for (int i = 0; i < listed.size(); i++) {
-		listed.at(i).day += 1;
-	}
-
-	std::ofstream out("today_baked.txt");
-	for (int i = 0; i < listed.size(); i++) {
-		std::ostringstream oss;
-		if (listed.at(i).day < 7) {
-			oss << listed.at(i).name << " " << listed.at(i).stock << " " << listed.at(i).cost << " " << 0 << " " << listed.at(i).day;
-			textline = oss.str();
-			out << textline << '\n';
-		}
-	}
-	out.close();
+	makesure^ z = gcnew makesure();
+	z->ShowDialog();
 }
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
