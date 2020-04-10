@@ -435,12 +435,12 @@ namespace Project1 {
 			this->label7->AutoSize = true;
 			this->label7->BackColor = System::Drawing::Color::Transparent;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
-			this->label7->ForeColor = System::Drawing::Color::Blue;
+			this->label7->ForeColor = System::Drawing::Color::Gold;
 			this->label7->Location = System::Drawing::Point(640, 503);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(190, 34);
+			this->label7->Size = System::Drawing::Size(166, 34);
 			this->label7->TabIndex = 18;
-			this->label7->Text = L"Now Best sell";
+			this->label7->Text = L"Best Selling";
 			this->label7->Visible = false;
 			// 
 			// listBox5
