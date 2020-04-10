@@ -499,24 +499,30 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	std::vector<bread> listed;
 	char name[50];
 	while (std::getline(in, textline)) {
-		float d, p;
 		std::istringstream iss(textline);
 		std::string sold, stock, amount, day;
-		iss >> name >> stock >> amount >> sold >> day;
-		d = stof(day);
-		p = stof(amount);
-		if (d >= 5) {
-			p /= 1.5;
+		double p;
 
+		bread tmp;
+		std::istringstream iss2(iss.str());
+		iss2 >> name >> tmp.stock >> tmp.cost >> tmp.sold >> tmp.day;
+		tmp.name = name;
+		listed.push_back(tmp);
+
+		iss >> name >> stock >> amount >> sold >> day;
+		p = stof(amount);
+
+		if (listed.at(listed.size() - 1).day >= 5) {
+			p /= 1.5;
 		}
-	/*	else if (d > 7) {
-			//std::iss->remove();
-			continue;
-		}*/
+
 		if(p - int(p) > 0.75 ){ amount = std::to_string(int(p) + 1); }
 		else if(p - int(p) > 0.5){ amount = std::to_string(int(p)) + ".75"; }
 		else if (p - int(p) > 0.25){ amount = std::to_string(int(p)) + ".50"; }
 		else if (p - int(p) > 0) { amount = std::to_string(int(p))+ ".25"; }
+		else { amount = std::to_string(int(p)); }
+		listed.at(listed.size() - 1).cost = stof(amount);
+
 		this->listBox1->Items->Add(marshal_as<String^>(name) + "\n");
 		this->listBox2->Items->Add(marshal_as<String^>(sold) + "\n");
 		this->listBox3->Items->Add(marshal_as<String^>(stock) + "\n");
@@ -540,25 +546,44 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	file.close();
 
 	Summary^ c = gcnew Summary();
-	int total = 0;
+	double total = 0;
 	c->clearListBox();
 	for (int i = 0; i < listed.size(); i++) {
-		total += listed.at(i).sold * listed.at(i).cost;
+		
+		double p;
+		std::string pay;
+		p = listed.at(i).cost;
+
+		if (listed.at(i).day >= 5) {
+			p /= 1.5;
+		}
+
+		if (p - int(p) > 0.75) { pay = std::to_string(int(p) + 1); }
+		else if (p - int(p) > 0.5) { pay = std::to_string(int(p)) + ".75"; }
+		else if (p - int(p) > 0.25) { pay = std::to_string(int(p)) + ".50"; }
+		else if (p - int(p) > 0) { pay = std::to_string(int(p)) + ".25"; }
+		else { pay = std::to_string(int(p)); }
+		p = stof(pay);
+		
+		double N_amount = listed.at(i).amount(listed.at(i).sold, p);
+		
+		total += N_amount;
 		c->UpdateListBox1(marshal_as<String^>(listed.at(i).name) + "\n");
 		std::stringstream ss;
 		std::string sold, stock, amount;
-		ss << listed.at(i).sold << " " << listed.at(i).stock << " " << listed.at(i).sold * listed.at(i).cost;
+		ss << listed.at(i).sold << " " << listed.at(i).stock << " " << N_amount;
 		ss >> sold >> stock >> amount;
+
 		c->UpdateListBox2(marshal_as<String^>(sold) + "\n");
 		c->UpdateListBox3(marshal_as<String^>(stock) + "\n");
 		c->UpdateListBox4(marshal_as<String^>(amount) + "\n");
 	}
 	std::stringstream str;
 	std::string outTotal, baht;
-	baht = "Baht(ß)";
-	str << total << baht;
+	baht = "  Baht(ß)";
+	str << total;
 	str >> outTotal;
-	c->UpdateTotal(marshal_as<String^>(outTotal));
+	c->UpdateTotal(marshal_as<String^>(outTotal + baht));
 	c->ShowDialog();
 
 

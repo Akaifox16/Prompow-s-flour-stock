@@ -1,5 +1,5 @@
 #include "bread.h"
 
-int bread::amount(int sold, int cost) {
+double bread::amount(int sold, double cost) {
     return sold * cost;
 }

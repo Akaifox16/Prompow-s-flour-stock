@@ -1,4 +1,4 @@
-toast_ham_&_cheese: 5 65 0 2
-bunny_butter_cream: 4 75 0 2
-carrot_cake: 8 75 0 2
-Butter_Croissant: 18 50 0 2
+toast_ham_&_cheese 25 55 0 1
+bunny_butter_cream 50 65 0 1
+carrot_cake 10 75 0 1
+Butter_Croissant 30 60 0 1
