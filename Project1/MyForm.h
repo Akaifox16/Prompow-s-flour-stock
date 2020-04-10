@@ -159,7 +159,6 @@ namespace Project1 {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(163, 104);
 			this->panel2->TabIndex = 0;
-			this->panel2->Click += gcnew System::EventHandler(this, &MyForm::panel2_Click_1);
 			// 
 			// label5
 			// 
@@ -379,7 +378,6 @@ namespace Project1 {
 			this->label1->TabIndex = 14;
 			this->label1->Text = L"MENU";
 			this->label1->Visible = false;
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_1);
 			// 
 			// label2
 			// 
@@ -482,7 +480,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	Added^ c = gcnew Added();
+	chart^ c = gcnew chart();
 	c->ShowDialog();
 }
 private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {

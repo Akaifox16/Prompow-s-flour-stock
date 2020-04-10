@@ -202,7 +202,7 @@ namespace Project1 {
 	private: System::Void monthCalendar1_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	Hide();
+	Close();
 	
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -248,11 +248,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		String^ str = marshal_as<String^>(oss.str());
 		sw->Write(str );
 	}
-	Added^ c = gcnew Added();
-	c->Show();
+	Added^ a = gcnew Added();
+	a->ShowDialog();
 	sw->Close();
-	
-	
 	
 }
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
