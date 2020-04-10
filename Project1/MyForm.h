@@ -4,6 +4,7 @@
 #include "Summary.h"
 #include "addBread.h"
 #include "Added.h"
+#include <algorithm>
 
 
 namespace Project1 {
@@ -622,7 +623,28 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		listed.push_back(tmp);
 	}
 	file.close();
-	
+	for (int i = 0;i<listed.size();i++) {
+		for (int j = i; j > 0; j--) {
+			if (listed[j].sold > listed[j - 1].sold) {
+				std::swap(listed[j - 1], listed[j]);
+			}
+		}
+	}
+	this->listBox1->Items->Clear();
+	this->listBox2->Items->Clear();
+	this->listBox3->Items->Clear();
+	this->listBox4->Items->Clear();
+
+	for (int i = 0;i<listed.size();i++) {
+		std::string namae,kai,stocku,amounto;
+		std::stringstream ss;
+		ss << listed[i].name << " " << listed[i].sold << " " << listed[i].stock << " " << listed[i].cost;
+		ss >> namae >> kai >> stocku >> amounto;
+		this->listBox1->Items->Add(marshal_as<String^>(namae) + "\n");
+		this->listBox2->Items->Add(marshal_as<String^>(kai) + "\n");
+		this->listBox3->Items->Add(marshal_as<String^>(stocku) + "\n");
+		this->listBox4->Items->Add(marshal_as<String^>(amounto) + "\n");
+	}
 }
 private: System::Void MyForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	if (this->dragging) {
