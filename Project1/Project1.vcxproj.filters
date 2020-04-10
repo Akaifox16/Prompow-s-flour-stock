@@ -36,6 +36,9 @@
     <ClCompile Include="addBread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Added.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="addBread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Added.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

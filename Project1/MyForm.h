@@ -3,6 +3,7 @@
 #include "bread.h"
 #include "Summary.h"
 #include "addBread.h"
+#include "Added.h"
 
 
 namespace Project1 {
@@ -481,7 +482,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	chart^ c = gcnew chart();
+	Added^ c = gcnew Added();
 	c->ShowDialog();
 }
 private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {

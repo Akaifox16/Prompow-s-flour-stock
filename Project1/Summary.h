@@ -50,6 +50,7 @@ namespace Project1 {
 		label5->Text = lstValue;
 	}
 	private: bool dragging;
+
 	private: Point offset;
 	protected:
 		/// <summary>

@@ -127,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="addBread.cpp" />
+    <ClCompile Include="Added.cpp" />
     <ClCompile Include="bread.cpp" />
     <ClCompile Include="chart.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -136,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="addBread.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Added.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="bread.h" />
@@ -152,6 +156,9 @@
   <ItemGroup>
     <EmbeddedResource Include="addBread.resx">
       <DependentUpon>addBread.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Added.resx">
+      <DependentUpon>Added.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="chart.resx">
       <DependentUpon>chart.h</DependentUpon>
