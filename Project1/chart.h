@@ -92,9 +92,9 @@ namespace Project1 {
 			this->label1->Location = System::Drawing::Point(306, 26);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(176, 32);
+			this->label1->Size = System::Drawing::Size(266, 40);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Which to sell";
+			this->label1->Text = L"Which to sold \?";
 			this->label1->Click += gcnew System::EventHandler(this, &chart::label1_Click);
 			// 
 			// button1
@@ -122,7 +122,7 @@ namespace Project1 {
 			this->label2->Location = System::Drawing::Point(91, 115);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(67, 23);
+			this->label2->Size = System::Drawing::Size(84, 28);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Name";
 			// 
@@ -135,7 +135,7 @@ namespace Project1 {
 			this->label5->Location = System::Drawing::Point(437, 115);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(82, 23);
+			this->label5->Size = System::Drawing::Size(103, 28);
 			this->label5->TabIndex = 9;
 			this->label5->Text = L"Amount";
 			// 
@@ -159,19 +159,19 @@ namespace Project1 {
 			// 
 			this->textBox1->Location = System::Drawing::Point(199, 120);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(160, 20);
+			this->textBox1->Size = System::Drawing::Size(160, 23);
 			this->textBox1->TabIndex = 12;
 			// 
 			// textBox2
 			// 
 			this->textBox2->Location = System::Drawing::Point(558, 120);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 20);
+			this->textBox2->Size = System::Drawing::Size(100, 23);
 			this->textBox2->TabIndex = 13;
 			// 
 			// chart
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 15);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));

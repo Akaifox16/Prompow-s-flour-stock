@@ -64,9 +64,10 @@ namespace Project1 {
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->pictureBox1->Location = System::Drawing::Point(94, 12);
+			this->pictureBox1->Location = System::Drawing::Point(125, 15);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(144, 119);
+			this->pictureBox1->Size = System::Drawing::Size(192, 146);
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -75,11 +76,12 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->Location = System::Drawing::Point(55, 134);
+			this->label1->Location = System::Drawing::Point(73, 165);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(219, 23);
+			this->label1->Size = System::Drawing::Size(301, 28);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"Error !! Please try again";
+			this->label1->Text = L"Error !! Please type again";
 			this->label1->Click += gcnew System::EventHandler(this, &fail::label1_Click);
 			// 
 			// button1
@@ -88,9 +90,10 @@ namespace Project1 {
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold));
-			this->button1->Location = System::Drawing::Point(128, 175);
+			this->button1->Location = System::Drawing::Point(171, 215);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(76, 26);
+			this->button1->Size = System::Drawing::Size(101, 32);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"OK";
 			this->button1->UseVisualStyleBackColor = false;
@@ -98,15 +101,16 @@ namespace Project1 {
 			// 
 			// fail
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(45)));
-			this->ClientSize = System::Drawing::Size(343, 230);
+			this->ClientSize = System::Drawing::Size(457, 283);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"fail";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"fail";

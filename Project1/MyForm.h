@@ -635,7 +635,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		this->listBox1->Items->Add(marshal_as<String^>(namae) + "\n");
 		this->listBox2->Items->Add(marshal_as<String^>(kai) + "\n");
 		this->listBox3->Items->Add(marshal_as<String^>(stocku) + "\n");
-		this->listBox4->Items->Add(marshal_as<String^>(amounto) + "\n");
+		this->listBox4->Items->Add(marshal_as<String^>(pay) + "\n");
 	}
 	this->listBox5->Items->Add(marshal_as<String^>(listed.at(0).name) + "\n");
 }
