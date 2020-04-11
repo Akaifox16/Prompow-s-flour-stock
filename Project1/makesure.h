@@ -2,6 +2,7 @@
 #include "Summary.h"
 #include "bread.h"
 #include <msclr\marshal_cppstd.h>
+#include "fail.h"
 
 namespace Project1 {
 	using namespace msclr::interop;
@@ -145,7 +146,7 @@ namespace Project1 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();		
+		Hide();		
 		std::ifstream file("today_baked.txt");
 		std::string textline;
 		std::vector<bread> listed;
@@ -158,65 +159,70 @@ namespace Project1 {
 			listed.push_back(tmp);
 		}
 		file.close();
+		if (listed.size() == 0) {
+			fail^ b = gcnew fail();
+			b->UpdateLebel("Fail !! Store is empty ");
+			b->ShowDialog();
+		}
+		else {
+			Summary^ c = gcnew Summary();
+			double total = 0;
+			c->clearListBox();
+			for (int i = 0; i < listed.size(); i++) {
 
-		Summary^ c = gcnew Summary();
-		double total = 0;
-		c->clearListBox();
-		for (int i = 0; i < listed.size(); i++) {
+				double p;
+				std::string pay;
+				p = listed.at(i).cost;
 
-			double p;
-			std::string pay;
-			p = listed.at(i).cost;
+				if (listed.at(i).day >= 5) {
+					p /= 1.5;
+				}
 
-			if (listed.at(i).day >= 5) {
-				p /= 1.5;
+				if (p - int(p) > 0.75) { pay = std::to_string(int(p) + 1); }
+				else if (p - int(p) > 0.5) { pay = std::to_string(int(p)) + ".75"; }
+				else if (p - int(p) > 0.25) { pay = std::to_string(int(p)) + ".50"; }
+				else if (p - int(p) > 0) { pay = std::to_string(int(p)) + ".25"; }
+				else { pay = std::to_string(int(p)); }
+				p = stof(pay);
+
+				double N_amount = listed.at(i).amount(listed.at(i).sold, p);
+
+				total += N_amount;
+				c->UpdateListBox1(marshal_as<String^>(listed.at(i).name) + "\n");
+				std::stringstream ss;
+				std::string sold, stock, amount;
+				ss << listed.at(i).sold << " " << listed.at(i).stock << " " << N_amount;
+				ss >> sold >> stock >> amount;
+
+				c->UpdateListBox2(marshal_as<String^>(sold) + "\n");
+				c->UpdateListBox3(marshal_as<String^>(stock) + "\n");
+				c->UpdateListBox4(marshal_as<String^>(amount) + "\n");
+			}
+			std::stringstream str;
+			std::string outTotal, baht;
+			baht = "  Baht(ß)";
+			str << total;
+			str >> outTotal;
+			c->UpdateTotal(marshal_as<String^>(outTotal + baht));
+			c->ShowDialog();
+
+
+			for (int i = 0; i < listed.size(); i++) {
+				listed.at(i).day += 1;
 			}
 
-			if (p - int(p) > 0.75) { pay = std::to_string(int(p) + 1); }
-			else if (p - int(p) > 0.5) { pay = std::to_string(int(p)) + ".75"; }
-			else if (p - int(p) > 0.25) { pay = std::to_string(int(p)) + ".50"; }
-			else if (p - int(p) > 0) { pay = std::to_string(int(p)) + ".25"; }
-			else { pay = std::to_string(int(p)); }
-			p = stof(pay);
-
-			double N_amount = listed.at(i).amount(listed.at(i).sold, p);
-
-			total += N_amount;
-			c->UpdateListBox1(marshal_as<String^>(listed.at(i).name) + "\n");
-			std::stringstream ss;
-			std::string sold, stock, amount;
-			ss << listed.at(i).sold << " " << listed.at(i).stock << " " << N_amount;
-			ss >> sold >> stock >> amount;
-
-			c->UpdateListBox2(marshal_as<String^>(sold) + "\n");
-			c->UpdateListBox3(marshal_as<String^>(stock) + "\n");
-			c->UpdateListBox4(marshal_as<String^>(amount) + "\n");
-		}
-		std::stringstream str;
-		std::string outTotal, baht;
-		baht = "  Baht(ß)";
-		str << total;
-		str >> outTotal;
-		c->UpdateTotal(marshal_as<String^>(outTotal + baht));
-		c->ShowDialog();
-
-
-		for (int i = 0; i < listed.size(); i++) {
-			listed.at(i).day += 1;
-		}
-
-		std::ofstream out("today_baked.txt");
-		for (int i = 0; i < listed.size(); i++) {
-			std::ostringstream oss;
-			if (listed.at(i).day < 7 ) {
-				if (listed.at(i).stock == 0) { continue; }
-				oss << listed.at(i).name << " " << listed.at(i).stock << " " << listed.at(i).cost << " " << 0 << " " << listed.at(i).day;
-				textline = oss.str();
-				out << textline << '\n';
+			std::ofstream out("today_baked.txt");
+			for (int i = 0; i < listed.size(); i++) {
+				std::ostringstream oss;
+				if (listed.at(i).day < 7) {
+					if (listed.at(i).stock == 0) { continue; }
+					oss << listed.at(i).name << " " << listed.at(i).stock << " " << listed.at(i).cost << " " << 0 << " " << listed.at(i).day;
+					textline = oss.str();
+					out << textline << '\n';
+				}
 			}
+			out.close();
 		}
-		out.close();
-
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();

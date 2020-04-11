@@ -81,13 +81,14 @@ namespace Project1 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold));
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label1->Location = System::Drawing::Point(130, 127);
+			this->label1->Location = System::Drawing::Point(123, 127);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(90, 23);
+			this->label1->Size = System::Drawing::Size(111, 25);
 			this->label1->TabIndex = 2;
-			this->label1->Text = L"Added !!";
+			this->label1->Text = L"Success !!";
 			// 
 			// pictureBox1
 			// 

@@ -4,6 +4,7 @@
 #include <string>
 #include <msclr\marshal_cppstd.h>
 #include "Added.h"
+#include "fail.h"
 
 namespace Project1 {
 	using namespace msclr::interop;
@@ -251,14 +252,21 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	std::string name = marshal_as<std::string>(clrName);
 	std::string strPrice = marshal_as<std::string>(clrPrice);
 	std::string strAmount = marshal_as<std::string>(clrAmount);
+	//เช็คช่องว่าง
+	if (clrName == "" || clrPrice == "" || clrAmount == ""){
+		fail^ f = gcnew fail();
+		f->UpdateLebel("Fail !! Please type again ");
+		f->ShowDialog();
+	}
+	else {
+		//เพิ่มขนมปัง เข้าคลัง
+		std::fstream out("today_baked.txt", std::fstream::out | std::fstream::app);
+		out << name << " " << strAmount << " " << strPrice << " 0 0" << "\n";
+		out.close();
 
-	//เพิ่มขนมปัง เข้าคลัง
-	std::fstream out("today_baked.txt" , std::fstream::out | std::fstream::app);
-	out << name << " " << strAmount << " " <<strPrice << " 0 0"   << "\n";
-	out.close();
-
-	Added^ a = gcnew Added();
-	a->ShowDialog();
+		Added^ a = gcnew Added();
+		a->ShowDialog();
+	}
 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {

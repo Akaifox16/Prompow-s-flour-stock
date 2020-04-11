@@ -54,6 +54,7 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
 
@@ -74,6 +75,7 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(chart::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -81,6 +83,8 @@ namespace Project1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -92,7 +96,7 @@ namespace Project1 {
 			this->label1->Location = System::Drawing::Point(306, 26);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(266, 40);
+			this->label1->Size = System::Drawing::Size(211, 32);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Which to sold \?";
 			this->label1->Click += gcnew System::EventHandler(this, &chart::label1_Click);
@@ -122,7 +126,7 @@ namespace Project1 {
 			this->label2->Location = System::Drawing::Point(91, 115);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(84, 28);
+			this->label2->Size = System::Drawing::Size(67, 23);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Name";
 			// 
@@ -135,7 +139,7 @@ namespace Project1 {
 			this->label5->Location = System::Drawing::Point(437, 115);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(103, 28);
+			this->label5->Size = System::Drawing::Size(82, 23);
 			this->label5->TabIndex = 9;
 			this->label5->Text = L"Amount";
 			// 
@@ -159,23 +163,34 @@ namespace Project1 {
 			// 
 			this->textBox1->Location = System::Drawing::Point(199, 120);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(160, 23);
+			this->textBox1->Size = System::Drawing::Size(160, 20);
 			this->textBox1->TabIndex = 12;
 			// 
 			// textBox2
 			// 
 			this->textBox2->Location = System::Drawing::Point(558, 120);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 23);
+			this->textBox2->Size = System::Drawing::Size(100, 20);
 			this->textBox2->TabIndex = 13;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(524, 12);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(61, 53);
+			this->pictureBox1->TabIndex = 14;
+			this->pictureBox1->TabStop = false;
 			// 
 			// chart
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 17);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
 			this->ClientSize = System::Drawing::Size(780, 340);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button2);
@@ -194,6 +209,7 @@ namespace Project1 {
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &chart::chart_MouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &chart::chart_MouseMove);
 			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &chart::chart_MouseUp);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -210,53 +226,66 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ name = textBox1->Text;
 	String^ sold = textBox2->Text;
-	textBox1->Clear();
-	textBox2->Clear();
-
-	// String^ name to string namefos
-	String^ clrString = name;
-	std::string nameofs = marshal_as<std::string>(clrString);
-
-	// String^ sold to string soldfos to int soldint
-	clrString = sold;
-	std::string soldofs = marshal_as<std::string>(clrString);
-	int soldint = std::stoi(soldofs);
-
-
-	std::ifstream in("today_baked.txt");
-	std::string textline;
-	std::vector<bread> listed;
-	while (std::getline(in, textline)) {
-		bread tmp;
-		std::istringstream iss(textline);
-		iss >> tmp.name >> tmp.stock >> tmp.cost >> tmp.sold >> tmp.day;
-		listed.push_back(tmp);
+	if (name == "" || sold == "") {
+		fail^ b = gcnew fail();
+		b->UpdateLebel("Fail !! Please type again ");
+		b->ShowDialog();
 	}
-	in.close();
-	StreamWriter^ sw = gcnew StreamWriter("today_baked.txt");
-	for (int j = 0; j < listed.size(); j++) {
-		if (nameofs == listed[j].name) {
-			if (soldint > listed[j].stock) {
-				fail^ b = gcnew fail();
-				b->ShowDialog();
-				break;
-			}
-			else {
-				Added^ a = gcnew Added();
-				a->ShowDialog();
-			}
-			listed[j].sold += soldint;
-			listed[j].stock -=   soldint;
+	else {
+		textBox1->Clear();
+		textBox2->Clear();
+
+		// String^ name to string namefos
+		String^ clrString = name;
+		std::string nameofs = marshal_as<std::string>(clrString);
+
+		// String^ sold to string soldfos to int soldint
+		clrString = sold;
+		std::string soldofs = marshal_as<std::string>(clrString);
+		int soldint = std::stoi(soldofs);
+
+
+		std::ifstream in("today_baked.txt");
+		std::string textline;
+		std::vector<bread> listed;
+		while (std::getline(in, textline)) {
+			bread tmp;
+			std::istringstream iss(textline);
+			iss >> tmp.name >> tmp.stock >> tmp.cost >> tmp.sold >> tmp.day;
+			listed.push_back(tmp);
 		}
+		in.close();
+		bool checkname = false;
+		StreamWriter^ sw = gcnew StreamWriter("today_baked.txt");
+		for (int j = 0; j < listed.size(); j++) {
+			if (nameofs == listed[j].name) {
+				if (soldint > listed[j].stock) {
+					fail^ b = gcnew fail();
+					b->UpdateLebel("Fail !! Please type again ");
+					b->ShowDialog();
+					break;
+				}
+				else {
+					Added^ a = gcnew Added();
+					a->ShowDialog();
+				}
+				listed[j].sold += soldint;
+				listed[j].stock -= soldint;
+				checkname = true;
+			}
+		}
+		if (checkname == false) {
+			fail^ b = gcnew fail();
+			b->ShowDialog();
+		}
+		for (int i = 0; i < listed.size(); i++) {
+			std::ostringstream oss;
+			oss << listed.at(i).name << " " << listed.at(i).stock << " " << listed.at(i).cost << " " << listed.at(i).sold << " " << listed.at(i).day << "\n";
+			String^ str = marshal_as<String^>(oss.str());
+			sw->Write(str);
+		}
+		sw->Close();
 	}
-	for (int i = 0; i < listed.size(); i++) {
-		std::ostringstream oss;
-		oss << listed.at(i).name << " " << listed.at(i).stock << " " << listed.at(i).cost << " " << listed.at(i).sold << " " << listed.at(i).day << "\n";
-		String^ str = marshal_as<String^>(oss.str());
-		sw->Write(str );
-	}
-	sw->Close();
-	
 }
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 
