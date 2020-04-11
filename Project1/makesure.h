@@ -146,7 +146,9 @@ namespace Project1 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Hide();		
+		//ทำให้หายไป---------
+		Visible = false;
+		//--------------
 		std::ifstream file("today_baked.txt");
 		std::string textline;
 		std::vector<bread> listed;
