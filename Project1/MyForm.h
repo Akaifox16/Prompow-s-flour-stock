@@ -456,9 +456,9 @@ namespace Project1 {
 			this->label7->ForeColor = System::Drawing::Color::Gold;
 			this->label7->Location = System::Drawing::Point(746, 503);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(155, 34);
+			this->label7->Size = System::Drawing::Size(148, 34);
 			this->label7->TabIndex = 18;
-			this->label7->Text = L"Bestselling";
+			this->label7->Text = L"Best seller";
 			this->label7->Visible = false;
 			this->label7->Click += gcnew System::EventHandler(this, &MyForm::label7_Click);
 			// 
