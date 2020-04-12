@@ -117,14 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>1.This program can use English only.
-2.Click summary to end day.
-3.When u want to add item click retail.
-4.Click dashboard to show all bread.
-5.Click Sort for sort best sell bread.
-6.Click add bread for add bread.
+  <data name="label2.Text" xml:space="preserve">
+    <value>1. This program can use English only.
 
+2. Click " Summary " to end day.
+
+3. When you want to sold item click " Retail ".
+
+4. Click " Dashboard " to show all bread.
+
+5. Click " Sort " for sort best sell bread.
+
+6. Click " add bread " for add bread.
 </value>
   </data>
 </root>
