@@ -581,7 +581,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	makesure^ z = gcnew makesure();
-	z->ShowDialog();
+	z->Show();
+	MyForm::Show();
 }
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
