@@ -133,6 +133,7 @@
     <ClCompile Include="bread.cpp" />
     <ClCompile Include="chart.cpp" />
     <ClCompile Include="fail.cpp" />
+    <ClCompile Include="Help1.cpp" />
     <ClCompile Include="makesure.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Summary.cpp" />
@@ -149,6 +150,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="fail.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Help1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="makesure.h">
@@ -173,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fail.resx">
       <DependentUpon>fail.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help1.resx">
+      <DependentUpon>Help1.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="makesure.resx">
       <DependentUpon>makesure.h</DependentUpon>
