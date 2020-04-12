@@ -69,10 +69,10 @@ namespace Project1 {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F));
 			this->button1->ForeColor = System::Drawing::Color::Red;
 			this->button1->ImageAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->button1->Location = System::Drawing::Point(374, -11);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Location = System::Drawing::Point(877, -7);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(50, 45);
+			this->button1->Size = System::Drawing::Size(67, 55);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"X";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -85,35 +85,38 @@ namespace Project1 {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label1->Location = System::Drawing::Point(12, 9);
+			this->label1->Location = System::Drawing::Point(16, 11);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(138, 28);
+			this->label1->Size = System::Drawing::Size(189, 37);
 			this->label1->TabIndex = 2;
-			this->label1->Text = L"Suggestion";
+			this->label1->Text = L"Instruction : ";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12));
 			this->label2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->label2->Location = System::Drawing::Point(39, 65);
+			this->label2->Location = System::Drawing::Point(39, 72);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(352, 231);
+			this->label2->Size = System::Drawing::Size(836, 391);
 			this->label2->TabIndex = 3;
 			this->label2->Text = resources->GetString(L"label2.Text");
+			this->label2->Click += gcnew System::EventHandler(this, &Help1::label2_Click);
 			// 
 			// Help1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(45)));
-			this->ClientSize = System::Drawing::Size(435, 327);
+			this->ClientSize = System::Drawing::Size(956, 535);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Help1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Help";
@@ -146,6 +149,8 @@ private: System::Void Help1_MouseMove(System::Object^ sender, System::Windows::F
 }
 private: System::Void Help1_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	this->dragging = false;
+}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

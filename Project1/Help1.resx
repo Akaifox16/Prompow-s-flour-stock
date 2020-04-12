@@ -118,17 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label2.Text" xml:space="preserve">
-    <value>1. This program can use English only.
+    <value>#Program only supports english language.#
 
-2. Click " Summary " to end day.
+1. input all space forms then click add
+   ,then click "Dashboard" to continue.
 
-3. When you want to sold item click " Retail ".
+2. Input bakery that has been sold in the "Retail" section .
 
-4. Click " Dashboard " to show all bread.
+3. Click "Sort" button to show the Bestselling menu and sort list menu from bestselling .
 
-5. Click " Sort " for sort best sell bread.
+4. Click "Summary" to end the day and will summarize all listed menu(s).
 
-6. Click " add bread " for add bread.
-</value>
+Note :
+ 
+Click Logo SM management to reset the program.  
+	
+When the bakery reach the fifth day the price will be discount 33.33%
+and on the seventh day, that bakery will be clear off.</value>
   </data>
 </root>

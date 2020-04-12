@@ -181,7 +181,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(63)));
 			this->label5->Location = System::Drawing::Point(49, 3);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(93, 58);
+			this->label5->Size = System::Drawing::Size(117, 73);
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"SM";
 			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
@@ -196,7 +196,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(138)));
 			this->label6->Location = System::Drawing::Point(25, 70);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(99, 17);
+			this->label6->Size = System::Drawing::Size(122, 21);
 			this->label6->TabIndex = 1;
 			this->label6->Text = L"management";
 			this->label6->Click += gcnew System::EventHandler(this, &MyForm::label6_Click);
@@ -289,7 +289,7 @@ namespace Project1 {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(160, 55);
 			this->button4->TabIndex = 18;
-			this->button4->Text = L"Add baked today";
+			this->button4->Text = L"Add Bakery  :D";
 			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click_1);
 			// 
@@ -321,10 +321,10 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox1->ForeColor = System::Drawing::Color::White;
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 19;
+			this->listBox1->ItemHeight = 23;
 			this->listBox1->Location = System::Drawing::Point(209, 101);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(294, 380);
+			this->listBox1->Size = System::Drawing::Size(294, 368);
 			this->listBox1->TabIndex = 10;
 			this->listBox1->Visible = false;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::listBox1_SelectedIndexChanged);
@@ -339,11 +339,11 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox2->ForeColor = System::Drawing::Color::White;
 			this->listBox2->FormattingEnabled = true;
-			this->listBox2->ItemHeight = 19;
+			this->listBox2->ItemHeight = 23;
 			this->listBox2->Location = System::Drawing::Point(509, 101);
 			this->listBox2->Name = L"listBox2";
 			this->listBox2->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->listBox2->Size = System::Drawing::Size(180, 380);
+			this->listBox2->Size = System::Drawing::Size(180, 368);
 			this->listBox2->TabIndex = 11;
 			this->listBox2->Visible = false;
 			// 
@@ -357,11 +357,11 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox3->ForeColor = System::Drawing::Color::White;
 			this->listBox3->FormattingEnabled = true;
-			this->listBox3->ItemHeight = 19;
+			this->listBox3->ItemHeight = 23;
 			this->listBox3->Location = System::Drawing::Point(695, 101);
 			this->listBox3->Name = L"listBox3";
 			this->listBox3->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->listBox3->Size = System::Drawing::Size(180, 380);
+			this->listBox3->Size = System::Drawing::Size(180, 368);
 			this->listBox3->TabIndex = 12;
 			this->listBox3->Visible = false;
 			// 
@@ -375,11 +375,11 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox4->ForeColor = System::Drawing::Color::White;
 			this->listBox4->FormattingEnabled = true;
-			this->listBox4->ItemHeight = 19;
+			this->listBox4->ItemHeight = 23;
 			this->listBox4->Location = System::Drawing::Point(881, 101);
 			this->listBox4->Name = L"listBox4";
 			this->listBox4->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->listBox4->Size = System::Drawing::Size(180, 380);
+			this->listBox4->Size = System::Drawing::Size(180, 368);
 			this->listBox4->TabIndex = 13;
 			this->listBox4->Visible = false;
 			// 
@@ -393,7 +393,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label1->Location = System::Drawing::Point(398, 51);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(73, 27);
+			this->label1->Size = System::Drawing::Size(94, 34);
 			this->label1->TabIndex = 14;
 			this->label1->Text = L"MENU";
 			this->label1->Visible = false;
@@ -408,7 +408,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label2->Location = System::Drawing::Point(595, 51);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(66, 27);
+			this->label2->Size = System::Drawing::Size(86, 34);
 			this->label2->TabIndex = 15;
 			this->label2->Text = L"SOLD";
 			this->label2->Visible = false;
@@ -423,7 +423,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label3->Location = System::Drawing::Point(737, 51);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(103, 27);
+			this->label3->Size = System::Drawing::Size(134, 34);
 			this->label3->TabIndex = 16;
 			this->label3->Text = L"INSTOCK";
 			this->label3->Visible = false;
@@ -438,7 +438,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label4->Location = System::Drawing::Point(949, 51);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(71, 27);
+			this->label4->Size = System::Drawing::Size(92, 34);
 			this->label4->TabIndex = 17;
 			this->label4->Text = L"PRICE";
 			this->label4->Visible = false;
@@ -449,12 +449,13 @@ namespace Project1 {
 			this->label7->BackColor = System::Drawing::Color::Transparent;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
 			this->label7->ForeColor = System::Drawing::Color::Gold;
-			this->label7->Location = System::Drawing::Point(690, 506);
+			this->label7->Location = System::Drawing::Point(746, 503);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(130, 27);
+			this->label7->Size = System::Drawing::Size(155, 34);
 			this->label7->TabIndex = 18;
-			this->label7->Text = L"Best Selling";
+			this->label7->Text = L"Bestselling";
 			this->label7->Visible = false;
+			this->label7->Click += gcnew System::EventHandler(this, &MyForm::label7_Click);
 			// 
 			// listBox5
 			// 
@@ -466,11 +467,11 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->listBox5->ForeColor = System::Drawing::Color::White;
 			this->listBox5->FormattingEnabled = true;
-			this->listBox5->ItemHeight = 19;
-			this->listBox5->Location = System::Drawing::Point(836, 514);
+			this->listBox5->ItemHeight = 23;
+			this->listBox5->Location = System::Drawing::Point(907, 514);
 			this->listBox5->Name = L"listBox5";
 			this->listBox5->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->listBox5->Size = System::Drawing::Size(258, 19);
+			this->listBox5->Size = System::Drawing::Size(187, 23);
 			this->listBox5->TabIndex = 19;
 			this->listBox5->Visible = false;
 			// 
@@ -727,6 +728,8 @@ private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	Help1^ helpme = gcnew Help1();
 	helpme->ShowDialog();
+}
+private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
