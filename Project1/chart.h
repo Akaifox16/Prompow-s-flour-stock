@@ -228,6 +228,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ name = textBox1->Text;
 	String^ sold = textBox2->Text;
+	
 	if (name == "" || sold == "") {
 		fail^ b = gcnew fail();
 		b->UpdateLebel("Fail !! Please type again ");
@@ -246,6 +247,12 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		std::string soldofs = marshal_as<std::string>(clrString);
 		int soldint = std::stoi(soldofs);
 
+		for (int i = 0; i < nameofs.size(); i++) {
+			if (nameofs[i] == ' ') {
+				nameofs[i] = '_';
+			}
+		}
+
 
 		std::ifstream in("today_baked.txt");
 		std::string textline;
@@ -255,6 +262,14 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 			std::istringstream iss(textline);
 			iss >> tmp.name >> tmp.stock >> tmp.cost >> tmp.sold >> tmp.day;
 			listed.push_back(tmp);
+		}
+
+		for (int x = 0;x<listed.size();x++) {
+			for (int i = 0; i < nameofs.size(); i++) {
+				if (listed[x].name[i] == ' ') {
+					listed[x].name[i] = '_';
+				}
+			}
 		}
 		in.close();
 		bool checkname = false;

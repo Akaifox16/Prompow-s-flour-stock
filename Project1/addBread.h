@@ -254,6 +254,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	std::string name = marshal_as<std::string>(clrName);
 	std::string strPrice = marshal_as<std::string>(clrPrice);
 	std::string strAmount = marshal_as<std::string>(clrAmount);
+
+		for (int i = 0; i < name.size(); i++) {
+			if (name[i] == ' ') {
+				name[i] = '_';
+			}
+		}
+
 	//เช็คช่องว่าง
 	if (clrName == "" || clrPrice == "" || clrAmount == ""){
 		fail^ f = gcnew fail();
