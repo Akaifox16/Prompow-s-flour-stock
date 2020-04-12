@@ -108,7 +108,8 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::Salmon;
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label1->Location = System::Drawing::Point(80, 30);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(126, 40);
@@ -120,7 +121,8 @@ namespace Project1 {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::Salmon;
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label2->Location = System::Drawing::Point(556, 30);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(103, 40);
@@ -133,7 +135,8 @@ namespace Project1 {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::Salmon;
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label3->Location = System::Drawing::Point(788, 30);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(150, 40);
@@ -145,7 +148,8 @@ namespace Project1 {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::Salmon;
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->label4->Location = System::Drawing::Point(1031, 30);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(161, 40);
@@ -157,7 +161,7 @@ namespace Project1 {
 			this->listBox1->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->listBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->listBox1->ForeColor = System::Drawing::Color::White;
+			this->listBox1->ForeColor = System::Drawing::Color::SteelBlue;
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 27;
 			this->listBox1->Location = System::Drawing::Point(72, 84);
@@ -186,7 +190,7 @@ namespace Project1 {
 			this->listBox2->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->listBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->listBox2->ForeColor = System::Drawing::Color::White;
+			this->listBox2->ForeColor = System::Drawing::Color::SteelBlue;
 			this->listBox2->FormattingEnabled = true;
 			this->listBox2->ItemHeight = 27;
 			this->listBox2->Location = System::Drawing::Point(556, 81);
@@ -216,7 +220,7 @@ namespace Project1 {
 			this->listBox3->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->listBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->listBox3->ForeColor = System::Drawing::Color::White;
+			this->listBox3->ForeColor = System::Drawing::Color::SteelBlue;
 			this->listBox3->FormattingEnabled = true;
 			this->listBox3->ItemHeight = 27;
 			this->listBox3->Location = System::Drawing::Point(785, 84);
@@ -232,7 +236,7 @@ namespace Project1 {
 			this->listBox4->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->listBox4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->listBox4->ForeColor = System::Drawing::Color::White;
+			this->listBox4->ForeColor = System::Drawing::Color::SteelBlue;
 			this->listBox4->FormattingEnabled = true;
 			this->listBox4->ItemHeight = 27;
 			this->listBox4->Location = System::Drawing::Point(1025, 84);
@@ -251,7 +255,7 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::Color::Red;
 			this->button5->Location = System::Drawing::Point(1223, -16);
-			this->button5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button5->Margin = System::Windows::Forms::Padding(4);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(72, 55);
 			this->button5->TabIndex = 11;
