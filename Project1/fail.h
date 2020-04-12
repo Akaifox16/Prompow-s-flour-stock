@@ -90,6 +90,7 @@ namespace Project1 {
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::PaleTurquoise;
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold));
