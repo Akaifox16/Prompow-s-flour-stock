@@ -728,6 +728,14 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 			this->listBox6->Items->Add(marshal_as<String^>(day) + "\n");
 		}
 
+		if (listed[0].sold == listed[1].sold) {
+			this->listBox5->Items->Add(marshal_as<String^>(listed.at(0).name) + "\n");
+			this->listBox5->Items->Add(marshal_as<String^>(listed.at(1).name) + "\n");
+		}
+		else {
+			this->listBox5->Items->Add(marshal_as<String^>(listed.at(0).name) + "\n");
+		}
+
 		Added^ g = gcnew Added();
 		g->ShowDialog();
 	}
