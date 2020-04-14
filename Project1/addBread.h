@@ -1,10 +1,8 @@
 #pragma once
-#include <fstream>
-#include <sstream>
-#include <string>
 #include <msclr\marshal_cppstd.h>
 #include "Added.h"
 #include "fail.h"
+#include "bread.h"
 
 namespace Project1 {
 	using namespace msclr::interop;
@@ -261,17 +259,53 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			}
 		}
 
-	//เช็คช่องว่าง
+		//เช็คช่องว่าง
 	if (clrName == "" || clrPrice == "" || clrAmount == ""){
 		fail^ f = gcnew fail();
 		f->UpdateLebel("Fail !! Please type again ");
 		f->ShowDialog();
 	}
 	else {
-		//เพิ่มขนมปัง เข้าคลัง
-		std::fstream out("today_baked.txt", std::fstream::out | std::fstream::app);
-		out << name << " " << strAmount << " " << strPrice << " 0 0" << "\n";
-		out.close();
+		std::ifstream check("today_baked.txt");
+		std::vector <bread>listed;
+		std::string textline;
+		while (std::getline(check, textline)) {
+			std::istringstream iss(textline);
+			std::string sold, stock, amount, day;
+			double p;
+
+			bread tmp;
+			std::istringstream iss2(iss.str());
+			iss2 >> name >> tmp.stock >> tmp.cost >> tmp.sold >> tmp.day;
+			tmp.name = name;
+ 
+			listed.push_back(tmp);
+		}
+		if (listed.size()!=0) {
+			for (int i = 0;i<listed.size;i++) {
+				if (listed[i].name==name && listed[i].day==0) {
+					listed[i].amount += stoi(strAmount);
+					strAmount = std::to_string(listed[i].amount);
+					std::ofstream out("today_baked.txt");
+					for (int j = 0; j < listed.size(); j++) {
+						std::ostringstream oss;
+						if (listed.at(j).day < 7) {
+							if (listed.at(j).stock == 0) { continue; }
+							oss << listed.at(j).name << " " << listed.at(j).stock << " " << listed.at(j).cost << " " << 0 << " " << listed.at(j).day;
+							textline = oss.str();
+							out << textline << '\n';
+						}
+					}
+					out.close();
+					break;
+				}else{//เพิ่มขนมปัง เข้าคลัง
+					std::fstream out("today_baked.txt", std::fstream::out | std::fstream::app);
+					out << name << " " << strAmount << " " << strPrice << " 0 0" << "\n";
+					out.close();
+				}
+			}
+		}
+
 
 		Added^ a = gcnew Added();
 		a->ShowDialog();
