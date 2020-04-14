@@ -282,10 +282,18 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			listed.push_back(tmp);
 		}
 		if (listed.size()!=0) {
-			for (int i = 0;i<listed.size;i++) {
+			for (int i = 0;i<listed.size();i++) {
 				if (listed[i].name==name && listed[i].day==0) {
-					listed[i].amount += stoi(strAmount);
-					strAmount = std::to_string(listed[i].amount);
+					if(stof(strPrice) != listed[i].cost ){
+						fail^ try_again = gcnew fail();
+						try_again->UpdateLebel("ERROR! wrong price.");
+						try_again->Show();
+						break;
+					}
+					
+					listed[i].stock = listed.at(i).stock + stoi(strAmount);
+					strAmount = std::to_string(listed[i].stock);
+					
 					std::ofstream out("today_baked.txt");
 					for (int j = 0; j < listed.size(); j++) {
 						std::ostringstream oss;
@@ -297,18 +305,33 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 						}
 					}
 					out.close();
+
+					Added^ b = gcnew Added();
+					b->ShowDialog();
+
 					break;
-				}else{//เพิ่มขนมปัง เข้าคลัง
+				}
+				else {//เพิ่มขนมปัง เข้าคลัง
 					std::fstream out("today_baked.txt", std::fstream::out | std::fstream::app);
 					out << name << " " << strAmount << " " << strPrice << " 0 0" << "\n";
 					out.close();
+
+					Added^ c = gcnew Added();
+					c->ShowDialog();
 				}
 			}
 		}
+		else {//เพิ่มขนมปัง เข้าคลัง
+			std::fstream out("today_baked.txt", std::fstream::out | std::fstream::app);
+			out << name << " " << strAmount << " " << strPrice << " 0 0" << "\n";
+			out.close();
+
+			Added^ a = gcnew Added();
+			a->ShowDialog();
+		}
 
 
-		Added^ a = gcnew Added();
-		a->ShowDialog();
+
 	}
 
 }
